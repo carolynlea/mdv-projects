@@ -1,11 +1,11 @@
 h1{
 	border: 1px solid #37382C;
 	margin:0px;
-	padding:40px;
+	padding:10px;
 	background:#37382C;
 	color:#FEFEF0;
 	font-family:georgia;
-	font-size:50px;	
+	font-size:30px;	
 }
 
 fieldset{
@@ -42,7 +42,7 @@ p{
 
 textarea{
 	color:#000000;
-	width:320px;
+	width:260px;
 	height:80px;
 	font-style:italic;
 }
@@ -112,7 +112,7 @@ img {
 	text-decoration:none;
 	text-shadow:1px 1px 0px #cd8a15;
 	position:absolute;
-		top:780px;
+		top:760px;
 		left:480px;
 }
 .myButton:hover {
@@ -125,6 +125,7 @@ img {
 #launch h1 {
 	text-align:center;
 	font-size:90px;
+	padding:30px;
 }
 
 #launch p {
@@ -180,8 +181,8 @@ a.button {
 		background:-moz-linear-gradient( center top, #37382C 5%, #7C8055 100% );
 		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#37382C', endColorstr='#7C8055');
 		background-color:#37382C;
-		-moz-border-radius:6px;
-		-webkit-border-radius:6px;
+		-moz-border-radius:11px;
+		-webkit-border-radius:11px;
 		border-radius:6px;
 		border:1px solid #37382C;
 		display:block;
@@ -189,9 +190,11 @@ a.button {
 		font-family:Georgia;
 		font-size:50px;
 		font-weight:bold;
-		padding:17px 76px;
+		padding:50px 40px;
 		text-decoration:none;
 		text-shadow:1px 1px 0px #aade7c;
+		
+		margin-top:2px;
 		
 }	
 a.button:hover {
