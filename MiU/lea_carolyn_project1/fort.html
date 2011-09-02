@@ -1,0 +1,107 @@
+<html>
+<head>
+<title>
+	Forts
+</title>
+<script language="javascript">
+	var json = { "forts":[ 
+			{
+				"dungeon_name": "",
+				"dungeon_type": "",
+				"location": "",
+				"date_found": "",
+				"populated": "",
+				"friendly": "",
+				"sel1": "",
+				"sel2": "",
+				"loot_rating": "",
+				"no_loot_here": "",
+				"notes": ""
+			},
+			{
+				"dungeon_name": "",
+				"dungeon_type": "",
+				"location": "",
+				"date_found": "",
+				"populated": "",
+				"friendly": "",
+				"sel1": "",
+				"sel2": "",
+				"loot_rating": "",
+				"no_loot_here": "",
+				"notes": ""
+			},
+			{
+				"dungeon_name": "",
+				"dungeon_type": "",
+				"location": "",
+				"date_found": "",
+				"populated": "",
+				"friendly": "",
+				"sel1": "",
+				"sel2": "",
+				"loot_rating": "",
+				"no_loot_here": "",
+				"notes": ""
+			},
+			{
+				"dungeon_name": "",
+				"dungeon_type": "",
+				"location": "",
+				"date_found": "",
+				"populated": "",
+				"friendly": "",
+				"sel1": "",
+				"sel2": "",
+				"loot_rating": "",
+				"no_loot_here": "",
+				"notes": ""
+			},
+			{
+				"dungeon_name": "",
+				"dungeon_type": "",
+				"location": "",
+				"date_found": "",
+				"populated": "",
+				"friendly": "",
+				"sel1": "",
+				"sel2": "",
+				"loot_rating": "",
+				"no_loot_here": "",
+				"notes": ""
+			}
+		]
+	};
+			var arr = json.portals;
+			if(!arr) return;
+			for(var i = arr.length -1; i >= 0; --i){
+				var o = arr[i];
+				var dungeon_name = o.dungeon_name;
+				var dungeon_type = o.dungeon_type;
+				var dlocation = o.dlocation;
+				var date_found = o.date_found;
+				var populated = o.populated;
+				var friendly = o.friendly;
+				var sel1=o.sel1;
+				var sel2=o.sel2;
+				var loot_rating = o.loot_rating;
+				var no_loot_here = o.no_loot_here;
+				var notes = o.notes;
+			
+			
+			document.write ("<h2><font color='blue'>dungeon_name</font>::" +o.dungeon_name+"<h2>");
+			document.write ("<h2><font color='blue'>dungeon_type</font>::" +o.dungeon_type+"<h2>");
+			document.write ("<h2><font color='blue'>location</font>::" +o.dlocation+"<h2>");
+			document.write ("<h2><font color='blue'>date_found</font>::" +o.date_found+"<h2>");
+			document.write ("<h2><font color='blue'>populated</font>::" +o.populated+"<h2>");
+			document.write ("<h2><font color='blue'>friendly</font>::" +o.friendly+"<h2>");
+			document.write ("<h2><font color='blue'>sel1</font>::" +o.sel1+"<h2>");
+			document.write ("<h2><font color='blue'>sel2</font>::" +o.sel2+"<h2>");
+			document.write ("<h2><font color='blue'>loot_rating</font>::" +o.loot_rating+"<h2>");
+			document.write ("<h2><font color='blue'>no_loot_here</font>::" +o.no_loot_here+"<h2>");
+			document.write ("<h2><font color='blue'>notes</font>::" +o.notes+"<h2>");
+			document.write (" <br /><br />"); 
+		}
+</script>
+</head>
+</html>

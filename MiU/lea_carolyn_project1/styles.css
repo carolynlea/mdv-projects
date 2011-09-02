@@ -134,12 +134,10 @@ img {
 	padding-bottom:30px;
 	padding-left:10px;
 	padding-right:10px;
-	font-size:35px;
+	font-size:40px;
 }
 
-#launch {
-	background:#FEFEF0;
-}
+
 
 #launch img {
 	border:3px #d29105;
@@ -157,6 +155,7 @@ padding: 15px 20px 10px 45px;
 color:#FEFEF0;
 font-size:60px;
 
+text-align:center;
 text-decoration: none;
 background:url(images/buttonbgcolor.png) no-repeat 0px 0px;
 }
@@ -207,13 +206,15 @@ h2{
 	font-size:45px;
 	font-family:Georgia;
 	font-weight:bold;
-	
+	line-height:75px;
 	padding-top:10px;
 	padding-bottom:10px;
 	padding-left:20px;
 	margin-bottom:5px;
 	border-top:2px solid #37382C;
-	border-bottom:2px solid #37382C;
+	border-bottom:2px dashed #37382C;
+	background-color:#FEFEF0;
+	text-align:center;
 	
 }
 
