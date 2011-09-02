@@ -1,3 +1,10 @@
+/*
+Carolyn Lea
+MiU 1109
+Project 1
+September 1, 2011
+*/
+
 function getItems(){
 	
 			var getListDiv = document.getElementById('list');
