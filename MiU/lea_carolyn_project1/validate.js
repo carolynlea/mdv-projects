@@ -1,3 +1,10 @@
+/*
+Carolyn Lea
+MiU 1108
+Project 1
+September 1, 2011
+*/
+
 function validateForm() {
   var getDungName = document.forms[0]["dungeon_name"].value;
   if (getDungName == "") {

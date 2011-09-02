@@ -1,3 +1,10 @@
+/*
+Carolyn Lea
+MiU 1108
+Project 1
+September 1, 2011
+*/
+
 function doChange(srcList, targetId){
 	
 	var val = srcList.options[srcList.selectedIndex].value;
