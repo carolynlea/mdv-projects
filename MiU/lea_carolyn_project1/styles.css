@@ -253,3 +253,19 @@ fieldset.search {
 .search button.btn:hover {
 	background: #fbc900 url(search_bg.gif) no-repeat bottom right;
 }
+
+#data h2{
+	color:#37382C;
+	font-size:16px;
+	font-family:Georgia;
+	font-weight:bold;
+	line-height:18px;
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-left:0px;
+	margin-bottom:0px;
+	border-top:none;
+	border-bottom:none;
+	background-color:#ffffff;
+	text-align:left;
+}
