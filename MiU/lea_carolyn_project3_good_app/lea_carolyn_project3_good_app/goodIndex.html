@@ -1,0 +1,1192 @@
+<!--CAROLYN LEA
+	PROJECT 3
+	MIU 1109
+	SEPTEMBER 12, 2011
+-->
+
+
+<!doctype html>
+<html lang="en">
+<head>
+	
+	<meta charset="utf-8" />
+	
+	<title>Mobile Site Template</title>
+	
+	<!--Mobile viewport optimized:j.imp/bplateviewport-->
+	<meta name="HandheldFriendly" content="true" />
+	<meta name="MobileOptimized" content="320" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+	<!--Mobile IE needs cleartype for smoothing fonts-->
+	<meta http-equiv="cleartype" content="on" />
+	
+	<!--Stylesheets here-->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.css" />
+	<link rel="stylesheet" type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jquery.mobile.datebox.min.css" />
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<!--Javascript normally at bottom except for Modernizr-->
+	<script src="js/libs/modernizr.custom.min.js"></script>
+</head>
+
+<body>
+	
+	<div data-role="page" id="home" data-theme="a">
+		
+		<div data-role="header" id="header" data-position="fixed">
+			<h1>Dungeon Tracker</h1>
+		</div>
+		
+		<div data-role="content">
+			
+			<center><img src="images/dungeon-2.png" width="300"/></center><!--feature image-->
+			<a href="addDungeon.html" data-role="button" data-theme="e">Add A Dungeon</a><br /><!--button goes to addItem part of application-->
+		
+			
+				<ul data-role="listview" data-theme="c" data-divider-theme="a">
+					<li data-role="list-divider">Browse saved items by category:</li>
+					<!--forms the heading for my categories-->
+					<li>
+					    <input type="search" name="search" id="search" value="" placeholder="search categories"/> <!--adds search box-->
+					</li>
+					<!--all my categories-->
+					<li><a href="#mostRecent">
+						<img src="images/dragon12.png" class="ui-li-icon" />
+						<center><h3>Most Recent Items</h3></center>
+						</a>
+					</li>
+					<li><a href="#campsites">
+						<img src="images/campsite.png" class="ui-li-icon" />
+						<center><h3>Campsites</h3></center>
+						</a>
+					</li>
+					<li><a href="#caves">
+						<img src="images/cave.png" class="ui-li-icon" />
+						<center><h3>Caves</h3></center>
+						</a>
+					</li>
+					<li><a href="#forts">
+						<img src="images/fort.png" class="ui-li-icon" />
+						<center><h3>Forts</h3></center>
+						</a>
+					</li>
+					<li><a href="#mines">
+						<img src="images/mine.png" class="ui-li-icon" />
+						<center><h3>Mines</h3></center>
+						</a>
+					</li>
+					<li><a href="#portals">
+						<img src="images/portal.png" class="ui-li-icon" />
+						<center><h3>Portals</h3></center>
+						</a>
+					</li>
+					<li><a href="#ruins">
+						<img src="images/ruin.png" class="ui-li-icon" />
+						<center><h3>Ruins</h3></center>
+						</a>
+					</li>
+				</ul>
+			</div>
+		
+		</div>
+		
+	</div>
+	
+	
+	<div data-role="page" id="mostRecent" data-add-back-btn="true">
+		
+		<div data-role="header" data-position="fixed">
+			<h1>Most Recent Items</h1><!--lists all the most recent items found Like a newsfeed-->
+		</div>
+		
+		<div data-role="content">
+			<ul data-role="listview" data-filter="true" data-theme="c" data-divider-theme="a">
+				
+			
+				<li><a href="#wendelbek">
+				<img src="images/ruin.png" class="ui-li-icon" /> 
+					<center><h3>Wendelbek</h3></center>
+					</a>
+				</li>
+				<li><a href="#morahame">
+					<img src="images/ruin.png" class="ui-li-icon" />  
+					<center><h3>Morahame</h3></center>
+					</a>
+				</li>
+				<li><a href="#ricketyMine">
+					<img src="images/mine.png" class="ui-li-icon" />  
+					<center><h3>Rickety Mine</h3></center>
+					</a>
+				</li>
+				<li><a href="#nenalata">
+					<img src="images/ruin.png" class="ui-li-icon" />  
+					<center><h3>Nenalata</h3></center>
+					</a>
+				</li>
+				<li><a href="#emptyMine">
+					<img src="images/mine.png" class="ui-li-icon" />  
+					<center><h3>Empty Mine</h3></center>
+					</a>
+				</li>
+				<li><a href="#atatar">
+					<img src="images/ruin.png" class="ui-li-icon" />  
+					<center><h3>Atatar</h3></center>
+					</a>
+				</li>
+				<li><a href="#crumblingMine">
+					<img src="images/mine.png" class="ui-li-icon" />  
+					<center><h3>Crumbling Mine</h3></center>
+					</a>
+				</li>
+				<li><a href="#vahtecen">
+					<img src="images/ruin.png" class="ui-li-icon" />   
+					<center><h3>Vahtecen</h3></center>
+					</a>
+				</li>
+				<li><a href="#plunderedMine">
+					<img src="images/mine.png" class="ui-li-icon" />  
+					<center><h3>Plundered Mine</h3></center>
+					</a>
+				</li>
+				<li><a href="#derelictMine">
+					<img src="images/mine.png" class="ui-li-icon" />  
+					<center><h3>Derelict Mine</h3></center>
+					</a>
+				</li>
+				<li><a href="#fortOntu">
+					<img src="images/fort.png" class="ui-li-icon" />  
+					<center><h3>Fort Ontu</h3></center>
+					</a>
+				</li>
+				<li><a href="#fortIstirus">
+					<img src="images/fort.png" class="ui-li-icon" />  
+					<center><h3>Fort Istirus</h3></center>
+					</a>
+				</li>
+				<li><a href="#fortUrasek">
+					<img src="images/fort.png" class="ui-li-icon" />  
+					<center><h3>Fort Urasek</h3></center>
+					</a>
+				</li>
+				<li><a href="#fortVirtue">
+					<img src="images/fort.png" class="ui-li-icon" />  
+					<center><h3>Fort Virtue</h3></center>
+					</a>
+				</li>
+				<li><a href="#fortRoebeck">
+					<img src="images/fort.png" class="ui-li-icon" />  
+					<center><h3>Fort Roebeck</h3></center>
+					</a>
+				</li>
+				<li><a href="#outlawEndresCave">
+					<img src="images/cave.png" class="ui-li-icon" />  
+					<center><h3>Outlaw Endres' Cave</h3></center>
+					</a>
+				</li>
+				<li><a href="#echoCave">
+					<img src="images/cave.png" class="ui-li-icon" />  
+					<center><h3>Echo Cave</h3></center>
+					</a>
+				</li>
+				<li><a href="#brokenPromisesCave">
+					<img src="images/cave.png" class="ui-li-icon" />  
+					<center><h3>Broken Promises Cave</h3></center>
+					</a>
+				</li>
+				<li><a href="#brittleRockCave">
+					<img src="images/cave.png" class="ui-li-icon" />  
+					<center><h3>Brittle Rock Cave</h3></center>
+					</a>
+				</li>
+				<li><a href="#hrotaCave">
+					<img src="images/cave.png" class="ui-li-icon" />  
+					<center><h3>Hrota Cave</h3></center>
+					</a>
+				</li>
+				
+			</ul>
+		</div>	
+	</div>
+	
+	
+	<div data-role="page" id="campsites" data-add-back-btn="true">
+		
+		<div data-role="header" data-position="fixed">
+			<h1>Campsites</h1><!--lists all the campsites found-->
+		</div>
+		
+		<div data-role="content">
+			<ul data-role="listview" data-filter="true" data-theme="c" data-divider-theme="a">
+				
+			
+				<li><a href="#blackDogCamp">
+				<img src="images/campsite.png" class="ui-li-icon" /> 
+					<center><h3>Black Dog Camp</h3></center>
+					</a>
+				</li>
+				<li><a href="#bawnwatchCamp">
+					<img src="images/campsite.png" class="ui-li-icon" />  
+					<center><h3>Bawnwatch Camp</h3></center>
+					</a>
+				</li>
+				<li><a href="#windRangeCamp">
+					<img src="images/campsite.png" class="ui-li-icon" />  
+					<center><h3>Wind Range Camp</h3></center>
+					</a>
+				</li>
+				<li><a href="#sercenCamp">
+					<img src="images/campsite.png" class="ui-li-icon" />  
+					<center><h3>Sercen Camp</h3></center>
+					</a>
+				</li>
+				<li><a href="#carbosCamp">
+					<img src="images/campsite.png" class="ui-li-icon" />   
+					<center><h3>Carbo's Camp</h3></center>
+					</a>
+				</li>
+				
+			</ul>
+		</div>	
+	</div>
+	
+	
+	<div data-role="page" id="caves" data-add-back-btn="true">
+		
+		<div data-role="header" data-position="fixed">
+			<h1>Caves</h1><!--lists all the caves found-->
+		</div>
+		
+		<div data-role="content">
+			<ul data-role="listview" data-filter="true" data-theme="c" data-divider-theme="a">
+				
+			
+				<li><a href="#hrotaCave">
+					<img src="images/cave.png" class="ui-li-icon" />
+					<center><h3>Hrota Cave</h3></center>
+					</a>
+				</li>
+				<li><a href="#echoCave">
+					<img src="images/cave.png" class="ui-li-icon" />
+					<center><h3>Echo Cave</h3></center>
+					</a>
+				</li>
+				<li><a href="#brittleRockCave">
+					<img src="images/cave.png" class="ui-li-icon" />
+					<center><h3>Brittle Rock Cave</h3></center>
+					</a>
+				</li>
+				<li><a href="#outlawEndresCave">
+					<img src="images/cave.png" class="ui-li-icon" />
+					<center><h3>Outlaw Endres' Cave</h3></center>
+					</a>
+				</li>
+				<li><a href="#brokenPromisesCave">
+					<img src="images/cave.png" class="ui-li-icon" />
+					<center><h3>Broken Promises Cave</h3></center>
+					</a>
+				</li>
+				
+			</ul>
+		</div>	
+	</div>
+	
+	
+	<div data-role="page" id="forts" data-add-back-btn="true">
+		
+		<div data-role="header" data-position="fixed">
+			<h1>Forts</h1><!--lists all the forts found-->
+		</div>
+		
+		<div data-role="content">
+			<ul data-role="listview" data-filter="true" data-theme="c" data-divider-theme="a">
+				
+			
+				<li><a href="#fortRoebeck">
+					<img src="images/fort.png" class="ui-li-icon" />
+					<center><h3>Fort Roebeck</h3></center>
+					</a>
+				</li>
+				<li><a href="#fortVirtue">
+					<img src="images/fort.png" class="ui-li-icon" />
+					<center><h3>Fort Virtue</h3></center>
+					</a>
+				</li>
+				<li><a href="#fortUrasek">
+					<img src="images/fort.png" class="ui-li-icon" />
+					<center><h3>Fort Urasek</h3></center>
+					</a>
+				</li>
+				<li><a href="#fortIstirus">
+					<img src="images/fort.png" class="ui-li-icon" />
+					<center><h3>Fort Istirus</h3></center>
+					</a>
+				</li>
+				<li><a href="#fortOntu">
+					<img src="images/fort.png" class="ui-li-icon" />
+					<center><h3>Fort Ontu</h3></center>
+					</a>
+				</li>
+				
+			</ul>
+		</div>	
+	</div>
+	
+	
+	<div data-role="page" id="mines" data-add-back-btn="true">
+		
+		<div data-role="header" data-position="fixed">
+			<h1>Mines</h1><!--lists all the mines found-->
+		</div>
+		
+		<div data-role="content">
+			<ul data-role="listview" data-filter="true" data-theme="c" data-divider-theme="a">
+				
+			
+				<li><a href="#derelictMine">
+					<img src="images/mine.png" class="ui-li-icon" />
+					<center><h3>Derelict Mine</h3></center>
+					</a>
+				</li>
+				<li><a href="#crumblingMine">
+					<img src="images/mine.png" class="ui-li-icon" />
+					<center><h3>Crumbling Mine</h3></center>
+					</a>
+				</li>
+				<li><a href="#plunderedMine">
+					<img src="images/mine.png" class="ui-li-icon" />
+					<center><h3>Plundered Mine</h3></center>
+					</a>
+				</li>
+				<li><a href="#emptyMine">
+					<img src="images/mine.png" class="ui-li-icon" />
+					<center><h3>Empty Mine</h3></center>
+					</a>
+				</li>
+				<li><a href="#ricketyMine">
+					<img src="images/mine.png" class="ui-li-icon" />
+					<center><h3>Rickety Mine</h3></center>
+					</a>
+				</li>
+				
+			</ul>
+		</div>	
+	</div>
+	
+	
+	<div data-role="page" id="portals" data-add-back-btn="true">
+		
+		<div data-role="header" data-position="fixed">
+			<h1>Portals</h1><!--lists all the portals found-->
+		</div>
+		
+		<div data-role="content">
+			<ul data-role="listview" data-filter="true" data-theme="c" data-divider-theme="a">
+				
+			
+				<li><a href="#brumaGate">
+					<img src="images/portal.png" class="ui-li-icon" />
+					<center><h3>Bruma Gate</h3></center>
+					</a>
+				</li>
+				<li><a href="#chorrolGate">
+					<img src="images/portal.png" class="ui-li-icon" />
+					<center><h3>Chorrol Gate</h3></center>
+					</a>
+				</li>
+				<li><a href="#skingradGate">
+					<img src="images/portal.png" class="ui-li-icon" />
+					<center><h3>Skingrad Gate</h3></center>
+					</a>
+				</li>
+				<li><a href="#anvilGate">
+					<img src="images/portal.png" class="ui-li-icon" />
+					<center><h3>Anvil Gate</h3></center>
+					</a>
+				</li>
+				<li><a href="#bravilGate">
+					<img src="images/portal.png" class="ui-li-icon" />
+					<center><h3>Bravil Gate</h3></center>
+					</a>
+				</li>
+				
+			</ul>
+		</div>	
+	</div>
+	
+	
+	<div data-role="page" id="ruins" data-add-back-btn="true">
+		
+		<div data-role="header" data-position="fixed">
+			<h1>Ruins</h1><!--lists all the ruins found-->
+		</div>
+		
+		<div data-role="content">
+			<ul data-role="listview" data-filter="true" data-theme="c" data-divider-theme="a">
+				
+			
+				<li><a href="#vahtecen">
+					<img src="images/ruin.png" class="ui-li-icon" />
+					<center><h3>Vahtecen</h3></center>
+					</a>
+				</li>
+				<li><a href="#atatar">
+					<img src="images/ruin.png" class="ui-li-icon" />
+					<center><h3>Atatar</h3></center>
+					</a>
+				</li>
+				<li><a href="#nenalata">
+					<img src="images/ruin.png" class="ui-li-icon" />
+					<center><h3>Nenalata</h3></center>
+					</a>
+				</li>
+				<li><a href="#morahame">
+					<img src="images/ruin.png" class="ui-li-icon" />
+					<center><h3>Morahame</h3></center>
+					</a>
+				</li>
+				<li><a href="#wendelbek">
+					<img src="images/ruin.png" class="ui-li-icon" />
+					<center><h3>Wendelbek</h3></center>
+					</a>
+				</li>
+				
+			</ul>
+		</div>	
+	</div>
+	
+	<!--start listing individual campsites found-->
+	<div data-role="page" id="blackDogCamp" data-add-back-btn="true">
+		
+		<div data-role="header" data-position="fixed">
+			<h1>Black Dog Camp</h1>
+		</div>
+		
+		<div data-role="content">
+	
+				<ul data-role="listview">
+					<li><img src="images/campsite.png" /></li>
+					<li>Location: southwest area</li>
+					<li>Date Found: August 11, 2011</li>
+					<li>Populated: yes</li>
+					<li>Friendly: no</li>
+					<li>Occupant: human</li>
+					<li>Category: bandits</li>
+					<li>Loot Rating: 0</li>
+					<li>No Loot Here: yes</li>
+					<li>Notes: One drunk bandit here.</li>
+				</ul>
+			</div>	
+		</div>
+		
+		
+		<div data-role="page" id="bawnwatchCamp" data-add-back-btn="true">
+
+			<div data-role="header" data-position="fixed">
+				<h1>Bawnwatch Camp</h1>
+			</div>
+
+			<div data-role="content">
+
+					<ul data-role="listview">
+						<li><img src="images/campsite.png" /></li>
+						<li>Location: east area</li>
+						<li>Date Found: August 7, 2011</li>
+						<li>Populated: no</li>
+						<li>Friendly: no</li>
+						<li>Occupant: none</li>
+						<li>Category: none</li>
+						<li>Loot Rating: 0</li>
+						<li>No Loot Here: yes</li>
+						<li>Notes: You can watch the ghost of the Forlorn Watchman.  Good camp to drop loot.</li>
+					</ul>
+				</div>	
+			</div>
+			
+			
+			<div data-role="page" id="windRangeCamp" data-add-back-btn="true">
+
+				<div data-role="header" data-position="fixed">
+					<h1>Wind Range Camp</h1>
+				</div>
+
+				<div data-role="content">
+
+					<ul data-role="listview">
+						<li><img src="images/campsite.png" /></li>
+						<li>Location: east area</li>
+						<li>Date Found: August 8, 2011</li>
+						<li>Populated: yes</li>
+						<li>Friendly: no</li>
+						<li>Occupant: human</li>
+						<li>Category: bandits</li>
+						<li>Loot Rating: 2</li>
+						<li>No Loot Here: no</li>
+						<li>Notes: Found some leather greaves.</li>
+					</ul>
+				</div>	
+			</div>
+				
+				
+			<div data-role="page" id="sercenCamp" data-add-back-btn="true">
+
+				<div data-role="header" data-position="fixed">
+					<h1>Sercen Camp</h1>
+				</div>
+
+				<div data-role="content">
+
+					<ul data-role="listview">
+						<li><img src="images/campsite.png" /></li>
+						<li>Location: east area</li>
+						<li>Date Found: August 9, 2011</li>
+						<li>Populated: yes</li>
+						<li>Friendly: yes</li>
+						<li>Occupant: human</li>
+						<li>Category: trainer</li>
+						<li>Loot Rating: 0</li>
+						<li>No Loot Here: yes</li>
+						<li>Notes: Alchemy trainer.</li>
+					</ul>
+				</div>	
+			</div>
+					
+					
+			<div data-role="page" id="carbosCamp" data-add-back-btn="true">
+
+				<div data-role="header" data-position="fixed">
+					<h1>Carbo's Camp</h1>
+				</div>
+
+				<div data-role="content">
+					
+					<ul data-role="listview">
+						<li><img src="images/campsite.png" /></li>
+						<li>Location: south area</li>
+						<li>Date Found: August 10, 2011</li>
+						<li>Populated: yes</li>
+						<li>Friendly: no</li>
+						<li>Occupant: human</li>
+						<li>Category: bandits</li>
+						<li>Loot Rating: 3</li>
+						<li>No Loot Here: no</li>
+						<li>Notes: Bandits have lockpicks and gold on them.</li>
+					</ul>
+				</div>	
+			</div>
+			
+			<!--start listing every cave found-->
+			<div data-role="page" id="hrotaCave" data-add-back-btn="true">
+
+				<div data-role="header" data-position="fixed">
+					<h1>Hrota Cave</h1>
+				</div>
+
+				<div data-role="content">
+
+					<ul data-role="listview">
+						<li><img src="images/cave.png" /></li>
+						<li>Location: southwest area</li>
+						<li>Date Found: August 11, 2011</li>
+						<li>Populated: yes</li>
+						<li>Friendly: no</li>
+						<li>Occupant: human</li>
+						<li>Category: bandits</li>
+						<li>Loot Rating: 5</li>
+						<li>No Loot Here: no</li>
+						<li>Notes: Lots of traps. Be careful!</li>
+					</ul>
+				</div>	
+			</div>
+			
+			
+			<div data-role="page" id="echoCave" data-add-back-btn="true">
+
+				<div data-role="header" data-position="fixed">
+					<h1>Echo Cave</h1>
+				</div>
+
+				<div data-role="content">
+
+					<ul data-role="listview">
+						<li><img src="images/cave.png" /></li>
+						<li>Location: west area</li>
+						<li>Date Found: August 14, 2011</li>
+						<li>Populated: yes</li>
+						<li>Friendly: no</li>
+						<li>Occupant: human</li>
+						<li>Category: necromancers</li>
+						<li>Loot Rating: 9</li>
+						<li>No Loot Here: no</li>
+						<li>Notes: Many boss chests with scrolls and potions.  Mannimarco is here.</li>
+					</ul>
+				</div>	
+			</div>
+			
+			
+			<div data-role="page" id="brittleRockCave" data-add-back-btn="true">
+
+				<div data-role="header" data-position="fixed">
+					<h1>Brittle Rock Cave</h1>
+				</div>
+
+				<div data-role="content">
+
+					<ul data-role="listview">
+						<li><img src="images/cave.png" /></li>
+						<li>Location: south area</li>
+						<li>Date Found: August 12, 2011</li>
+						<li>Populated: yes</li>
+						<li>Friendly: no</li>
+						<li>Occupant: animal</li>
+						<li>Category: fish</li>
+						<li>Loot Rating: 1</li>
+						<li>No Loot Here: no</li>
+						<li>Notes: One soul gem.</li>
+					</ul>
+				</div>	
+			</div>
+			
+			
+			<div data-role="page" id="outlawEndresCave" data-add-back-btn="true">
+
+				<div data-role="header" data-position="fixed">
+					<h1>Outlaw Endres' Cave</h1>
+				</div>
+
+				<div data-role="content">
+
+					<ul data-role="listview">
+						<li><img src="images/cave.png" /></li>
+						<li>Location: north area</li>
+						<li>Date Found: August 15, 2011</li>
+						<li>Populated: yes</li>
+						<li>Friendly: no</li>
+						<li>Occupant: human</li>
+						<li>Category: bandits</li>
+						<li>Loot Rating: 5</li>
+						<li>No Loot Here: no</li>
+						<li>Notes: There is a hidden trap door on the bottom level.</li>
+					</ul>
+				</div>	
+			</div>
+			
+			
+			<div data-role="page" id="brokenPromisesCave" data-add-back-btn="true">
+
+				<div data-role="header" data-position="fixed">
+					<h1>Broken Promises Cave</h1>
+				</div>
+
+				<div data-role="content">
+
+					<ul data-role="listview">
+						<li><img src="images/cave.png" /></li>
+						<li>Location: east area</li>
+						<li>Date Found: August 13, 2011</li>
+						<li>Populated: yes</li>
+						<li>Friendly: no</li>
+						<li>Occupant: mythic</li>
+						<li>Category: goblins</li>
+						<li>Loot Rating: 6</li>
+						<li>No Loot Here: no</li>
+						<li>Notes: Watch for swinging traps. Boss chest.</li>
+					</ul>
+				</div>	
+			</div>
+			
+			
+			<div data-role="page" id="fortRoebeck" data-add-back-btn="true">
+
+				<div data-role="header" data-position="fixed">
+					<h1>Fort Roebeck</h1>
+				</div>
+
+				<div data-role="content">
+
+					<ul data-role="listview">
+						<li><img src="images/fort.png" /></li>
+						<li>Location: northwest area</li>
+						<li>Date Found: August 16, 2011</li>
+						<li>Populated: yes</li>
+						<li>Friendly: no</li>
+						<li>Occupant: human</li>
+						<li>Category: conjurers</li>
+						<li>Loot Rating: 3</li>
+						<li>No Loot Here: no</li>
+						<li>Notes: Some scrolls and potions.  Left some silver armor. Be sure to go back and get it.</li>
+					</ul>
+				</div>	
+			</div>
+			
+			<!--start listing every fort found-->
+			<div data-role="page" id="fortVirtue" data-add-back-btn="true">
+
+				<div data-role="header" data-position="fixed">
+					<h1>Fort Virtue</h1>
+				</div>
+
+				<div data-role="content">
+
+					<ul data-role="listview">
+						<li><img src="images/fort.png" /></li>
+						<li>Location: north area</li>
+						<li>Date Found: August 17, 2011</li>
+						<li>Populated: yes</li>
+						<li>Friendly: no</li>
+						<li>Occupant: undead</li>
+						<li>Category: zombies</li>
+						<li>Loot Rating: 7</li>
+						<li>No Loot Here: no</li>
+						<li>Notes: Fair amount of loot but lots of dart traps.</li>
+					</ul>
+				</div>	
+			</div>
+			
+			
+			<div data-role="page" id="fortUrasek" data-add-back-btn="true">
+
+				<div data-role="header" data-position="fixed">
+					<h1>Fort Urasek</h1>
+				</div>
+
+				<div data-role="content">
+
+					<ul data-role="listview">
+						<li><img src="images/fort.png" /></li>
+						<li>Location: south area</li>
+						<li>Date Found: August 18, 2011</li>
+						<li>Populated: yes</li>
+						<li>Friendly: no</li>
+						<li>Occupant: mythic</li>
+						<li>Category: goblins</li>
+						<li>Loot Rating: 5</li>
+						<li>No Loot Here: no</li>
+						<li>Notes: You'll find marauders fighting the goblins.  Lots of traps.</li>
+					</ul>
+				</div>	
+			</div>
+			
+			
+			<div data-role="page" id="fortIstirus" data-add-back-btn="true">
+
+				<div data-role="header" data-position="fixed">
+					<h1>Fort Istirus</h1>
+				</div>
+
+				<div data-role="content">
+
+					<ul data-role="listview">
+						<li><img src="images/fort.png" /></li>
+						<li>Location: north area</li>
+						<li>Date Found: August 19, 2011</li>
+						<li>Populated: yes</li>
+						<li>Friendly: no</li>
+						<li>Occupant: human</li>
+						<li>Category: necromancers</li>
+						<li>Loot Rating: 8</li>
+						<li>No Loot Here: no</li>
+						<li>Notes: Complicated 3 levels.  Many dart traps.  Good loot.</li>
+					</ul>
+				</div>	
+			</div>
+			
+			
+			<div data-role="page" id="fortOntu" data-add-back-btn="true">
+
+				<div data-role="header" data-position="fixed">
+					<h1>Fort Ontu</h1>
+				</div>
+
+				<div data-role="content">
+
+					<ul data-role="listview">
+						<li><img src="images/fort.png" /></li>
+						<li>Location: northeast area</li>
+						<li>Date Found: August 20, 2011</li>
+						<li>Populated: yes</li>
+						<li>Friendly: yes</li>
+						<li>Occupant: human</li>
+						<li>Category: quest giver</li>
+						<li>Loot Rating: 0</li>
+						<li>No Loot Here: yes</li>
+						<li>Notes: Mages hangout.</li>
+					</ul>
+				</div>	
+			</div>
+			
+			<!--start listing every mine found-->
+			<div data-role="page" id="derelictMine" data-add-back-btn="true">
+
+				<div data-role="header" data-position="fixed">
+					<h1>Derelict Mine</h1>
+				</div>
+
+				<div data-role="content">
+
+					<ul data-role="listview">
+						<li><img src="images/mine.png" /></li>
+						<li>Location: south area</li>
+						<li>Date Found: August 21, 2011</li>
+						<li>Populated: yes</li>
+						<li>Friendly: no</li>
+						<li>Occupant: mythic</li>
+						<li>Category: goblins</li>
+						<li>Loot Rating: 4</li>
+						<li>No Loot Here: no</li>
+						<li>Notes: Sharp Tooth Goblin base. 2 totems here.</li>
+					</ul>
+				</div>	
+			</div>
+			
+			
+			<div data-role="page" id="crumblingMine" data-add-back-btn="true">
+
+				<div data-role="header" data-position="fixed">
+					<h1>Crumbling Mine</h1>
+				</div>
+
+				<div data-role="content">
+
+					<ul data-role="listview">
+						<li><img src="images/mine.png" /></li>
+						<li>Location: northwest area</li>
+						<li>Date Found: August 23, 2011</li>
+						<li>Populated: yes</li>
+						<li>Friendly: no</li>
+						<li>Occupant: human</li>
+						<li>Category: marauders</li>
+						<li>Loot Rating: 3</li>
+						<li>No Loot Here: no</li>
+						<li>Notes: Located under Chorrol.  Leads to a secret sewer system.</li>
+					</ul>
+				</div>	
+			</div>
+			
+			
+			<div data-role="page" id="plunderedMine" data-add-back-btn="true">
+
+				<div data-role="header" data-position="fixed">
+					<h1>Plundered Mine</h1>
+				</div>
+
+				<div data-role="content">
+
+					<ul data-role="listview">
+						<li><img src="images/mine.png" /></li>
+						<li>Location: west area</li>
+						<li>Date Found: August 22, 2011</li>
+						<li>Populated: yes</li>
+						<li>Friendly: no</li>
+						<li>Occupant: mythic</li>
+						<li>Category: goblins</li>
+						<li>Loot Rating: 3</li>
+						<li>No Loot Here: no</li>
+						<li>Notes: Three Feather Goblin base.  There's a breakaway wall at the top level.</li>
+					</ul>
+				</div>	
+			</div>
+			
+			
+			<div data-role="page" id="emptyMine" data-add-back-btn="true">
+
+				<div data-role="header" data-position="fixed">
+					<h1>Empty Mine</h1>
+				</div>
+
+				<div data-role="content">
+
+					<ul data-role="listview">
+						<li><img src="images/mine.png" /></li>
+						<li>Location: south area</li>
+						<li>Date Found: August 24, 2011</li>
+						<li>Populated: yes</li>
+						<li>Friendly: no</li>
+						<li>Occupant: mythic</li>
+						<li>Category: goblins</li>
+						<li>Loot Rating: 4</li>
+						<li>No Loot Here: no</li>
+						<li>Notes: Some notable silver pieces.  Lots of goblins.</li>
+					</ul>
+				</div>	
+			</div>
+			
+			
+			<div data-role="page" id="ricketyMine" data-add-back-btn="true">
+
+				<div data-role="header" data-position="fixed">
+					<h1>Rickety Mine</h1>
+				</div>
+
+				<div data-role="content">
+
+					<ul data-role="listview">
+						<li><img src="images/mine.png" /></li>
+						<li>Location: southwest area</li>
+						<li>Date Found: August 25, 2011</li>
+						<li>Populated: yes</li>
+						<li>Friendly: no</li>
+						<li>Occupant: human</li>
+						<li>Category: marauders</li>
+						<li>Loot Rating: 6</li>
+						<li>No Loot Here: no</li>
+						<li>Notes: Average loot.  Swinging traps.</li>
+					</ul>
+				</div>	
+			</div>
+			
+			<!--start listing every gate found-->
+			<div data-role="page" id="brumaGate" data-add-back-btn="true">
+
+				<div data-role="header" data-position="fixed">
+					<h1>Bruma Gate</h1>
+				</div>
+
+				<div data-role="content">
+
+					<ul data-role="listview">
+						<li><img src="images/portal.png" /></li>
+						<li>Location: north area</li>
+						<li>Date Found: August 1, 2011</li>
+						<li>Populated: yes</li>
+						<li>Friendly: no</li>
+						<li>Occupant: mythic</li>
+						<li>Category: minotaurs</li>
+						<li>Loot Rating: 4</li>
+						<li>No Loot Here: no</li>
+						<li>Notes: Hard work for so little loot.  Got a nice longsword, though.</li>
+					</ul>
+				</div>	
+			</div>
+			
+			
+			<div data-role="page" id="chorrolGate" data-add-back-btn="true">
+
+				<div data-role="header" data-position="fixed">
+					<h1>Chorrol Gate</h1>
+				</div>
+
+				<div data-role="content">
+
+					<ul data-role="listview">
+						<li><img src="images/portal.png" /></li>
+						<li>Location: east area</li>
+						<li>Date Found: August 2, 2011</li>
+						<li>Populated: yes</li>
+						<li>Friendly: no</li>
+						<li>Occupant: mythic</li>
+						<li>Category: ogres</li>
+						<li>Loot Rating: 7</li>
+						<li>No Loot Here: no</li>
+						<li>Notes: Found the very expensive Daedric Warhammer.</li>
+					</ul>
+				</div>	
+			</div>
+			
+			
+			<div data-role="page" id="skingradGate" data-add-back-btn="true">
+
+				<div data-role="header" data-position="fixed">
+					<h1>Skingrad Gate</h1>
+				</div>
+
+				<div data-role="content">
+
+					<ul data-role="listview">
+						<li><img src="images/portal.png" /></li>
+						<li>Location: southeast area</li>
+						<li>Date Found: August 3, 2011</li>
+						<li>Populated: yes</li>
+						<li>Friendly: no</li>
+						<li>Occupant: mythic</li>
+						<li>Category: goblins</li>
+						<li>Loot Rating: 10</li>
+						<li>No Loot Here: no</li>
+						<li>Notes: A goldmine for equipment: lockpicks, varla stones, tons of scrolls, potions, and a full set of ebony armor.</li>
+					</ul>
+				</div>	
+			</div>
+			
+			
+			<div data-role="page" id="anvilGate" data-add-back-btn="true">
+
+				<div data-role="header" data-position="fixed">
+					<h1>Anvil Gate</h1>
+				</div>
+
+				<div data-role="content">
+
+					<ul data-role="listview">
+						<li><img src="images/portal.png" /></li>
+						<li>Location: southwest area</li>
+						<li>Date Found: August 4, 2011</li>
+						<li>Populated: yes</li>
+						<li>Friendly: no</li>
+						<li>Occupant: mythic</li>
+						<li>Category: imps</li>
+						<li>Loot Rating: 6</li>
+						<li>No Loot Here: no</li>
+						<li>Notes: Lots of gold. Not much else.</li>
+					</ul>
+				</div>	
+			</div>
+			
+			
+			<div data-role="page" id="bravilGate" data-add-back-btn="true">
+
+				<div data-role="header" data-position="fixed">
+					<h1>Bravil Gate</h1>
+				</div>
+
+				<div data-role="content">
+
+					<ul data-role="listview">
+						<li><img src="images/portal.png" /></li>
+						<li>Location: west area</li>
+						<li>Date Found: August 5, 2011</li>
+						<li>Populated: yes</li>
+						<li>Friendly: no</li>
+						<li>Occupant: mythic</li>
+						<li>Category: unicorn</li>
+						<li>Loot Rating: 0</li>
+						<li>No Loot Here: yes</li>
+						<li>Notes: Tried to tame the unicorn but got thrown off.  Try again later.</li>
+					</ul>
+				</div>	
+			</div>
+			
+			<!--start listing every ruin found-->
+			<div data-role="page" id="vahtecen" data-add-back-btn="true">
+
+				<div data-role="header" data-position="fixed">
+					<h1>Vahtecen</h1>
+				</div>
+
+				<div data-role="content">
+
+					<ul data-role="listview">
+						<li><img src="images/ruin.png" /></li>
+						<li>Location: south area</li>
+						<li>Date Found: August 23, 2011</li>
+						<li>Populated: yes</li>
+						<li>Friendly: no</li>
+						<li>Occupant: undead</li>
+						<li>Category: wraiths</li>
+						<li>Loot Rating: 8</li>
+						<li>No Loot Here: no</li>
+						<li>Notes: Puzzle level, welkynd stones.  Watch for swinging blade traps.</li>
+					</ul>
+				</div>	
+			</div>
+			
+			
+			<div data-role="page" id="atatar" data-add-back-btn="true">
+
+				<div data-role="header" data-position="fixed">
+					<h1>Atatar</h1>
+				</div>
+
+				<div data-role="content">
+
+					<ul data-role="listview">
+						<li><img src="images/ruin.png" /></li>
+						<li>Location: south area</li>
+						<li>Date Found: August 24, 2011</li>
+						<li>Populated: yes</li>
+						<li>Friendly: no</li>
+						<li>Occupant: human</li>
+						<li>Category: bandits</li>
+						<li>Loot Rating: 8</li>
+						<li>No Loot Here: no</li>
+						<li>Notes: Confusing ruin with many traps.  Azani Blackheart is here.</li>
+					</ul>
+				</div>	
+			</div>
+			
+			
+			<div data-role="page" id="nenalata" data-add-back-btn="true">
+
+				<div data-role="header" data-position="fixed">
+					<h1>Nenalata</h1>
+				</div>
+
+				<div data-role="content">
+
+					<ul data-role="listview">
+						<li><img src="images/ruin.png" /></li>
+						<li>Location: west area</li>
+						<li>Date Found: August 25, 2011</li>
+						<li>Populated: yes</li>
+						<li>Friendly: no</li>
+						<li>Occupant: undead</li>
+						<li>Category: vampires</li>
+						<li>Loot Rating: 7</li>
+						<li>No Loot Here: no</li>
+						<li>Notes: Many varla and welkynd stones.</li>
+					</ul>
+				</div>	
+			</div>
+			
+			
+			<div data-role="page" id="morahame" data-add-back-btn="true">
+
+				<div data-role="header" data-position="fixed">
+					<h1>Morahame</h1>
+				</div>
+
+				<div data-role="content">
+
+					<ul data-role="listview">
+						<li><img src="images/ruin.png" /></li>
+						<li>Location: southwest area</li>
+						<li>Date Found: August 26, 2011</li>
+						<li>Populated: yes</li>
+						<li>Friendly: no</li>
+						<li>Occupant: mythic</li>
+						<li>Category: ogres</li>
+						<li>Loot Rating: 5</li>
+						<li>No Loot Here: no</li>
+						<li>Notes: Lots of loose equipment.</li>
+					</ul>
+				</div>	
+			</div>
+			
+			
+			<div data-role="page" id="wendelbek" data-add-back-btn="true">
+
+				<div data-role="header" data-position="fixed">
+					<h1>Wendelbek</h1>
+				</div>
+
+				<div data-role="content">
+
+					<ul data-role="listview">
+						<li><img src="images/ruin.png" /></li>
+						<li>Location: east area</li>
+						<li>Date Found: August 27, 2011</li>
+						<li>Populated: yes</li>
+						<li>Friendly: no</li>
+						<li>Occupant: human</li>
+						<li>Category: necromancers</li>
+						<li>Loot Rating: 9</li>
+						<li>No Loot Here: no</li>
+						<li>Notes: Lots of stones, ayleid statue, soul gems.</li>
+					</ul>
+				</div>	
+			</div>
+			
+			
+			
+			
+									
+									
+									
+	
+	
+	
+
+	
+	<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jquery.mobile.datebox.min.js"></script>
+</body>
+</html>
