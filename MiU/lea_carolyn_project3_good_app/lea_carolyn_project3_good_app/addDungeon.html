@@ -41,12 +41,12 @@
 		<div data-role="content">
 			<form>
 				<div data-role="fieldcontain">
-				    <label for="dungeon_name">Dungeon Name:</label>
+				    <label for="dungeon_name">Enter a dungeon name:</label>
 				    <input type="text" name="dungeon_name" id="dungeon_name" value=""  />
 				</div>
 				
 				<div data-role="fieldcontain">
-					<label for="dungeon_type" class="select">Choose a dungeon type:</label>
+					<label for="dungeon_type" class="select">Choose the dungeon type:</label>
 					<select name="dungeon_type" id="dungeon_type">
 						<option value="campsite">Campsite</option>
 						<option value="cave">Cave</option>
@@ -58,7 +58,7 @@
 				</div>
 				
 				<div data-role="fieldcontain">
-					<label for="location" class="select">Choose a dungeon location:</label>
+					<label for="location" class="select">Choose the dungeon location:</label>
 					<select name="location" id="location">
 						<option value="north">north</option>
 						<option value="northeast">northeast</option>
@@ -72,7 +72,7 @@
 				</div>
 				
 				<div data-role="fieldcontain">
-					<label for="mydate">Date Found:</label>
+					<label for="mydate">Date the dungeon was found:</label>
 
 					<input name="mydate" id="mydate" type="date" data-role="datebox"
 					   data-options='{"mode": "calbox"}' data-theme="a" />
@@ -80,10 +80,10 @@
 				
 				<div data-role="fieldcontain">
 				 	<fieldset data-role="controlgroup">
-						<legend>Is the dungeon populated?</legend>
-						<input type="checkbox" name="populated_1" id="populated_1" class="custom" />
+						<legend>Is this dungeon populated?</legend>
+						<input type="radio" value="yes" name="populated" id="populated_1" class="custom" />
 						<label for="populated_1">yes</label>
-						<input type="checkbox" name="populated_2" id="populated_2" class="custom" />
+						<input type="radio" value="no" name="populated" id="populated_2" class="custom" />
 						<label for="populated_2">no</label>
 				    </fieldset>
 				</div>
@@ -91,14 +91,17 @@
 				<div data-role="fieldcontain">
 				 	<fieldset data-role="controlgroup">
 						<legend>Are the inhabitants friendly?</legend>
-						<input type="checkbox" name="friendly_1" id="friendly_1" class="custom" />
+						<input type="radio" value="no" name="friendly" id="friendly_1" class="custom" />
 						<label for="friendly_1">no</label>
-						<input type="checkbox" name="friendly_2" id="friendly_2" class="custom" />
+						<input type="radio" value="yes" name="friendly" id="friendly_2" class="custom" />
 						<label for="friendly_2">yes</label>
 				    </fieldset>
 				</div>
 				
-				<div data-role="fieldcontain"> <label for="occupant" class="select">Choose inhabitants:</label> <select name="occupant" id="occupant" multiple="true"> <option>Please choose</option>
+				<div data-role="fieldcontain"> 
+				<label for="occupant" class="select">Choose which inhabitants are there:</label> 
+				<select name="occupant" id="occupant" multiple="true"> 
+				<option>Choose one or more.</option>
 				<optgroup label="Animal"> 
 				<option value="option1" disabled="true">bears</option> 
 				<option value="option2">crabs</option> 
