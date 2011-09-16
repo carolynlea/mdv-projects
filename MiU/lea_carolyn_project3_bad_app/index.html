@@ -22,11 +22,12 @@
 	<meta http-equiv="cleartype" content="on" />
 	
 	<!--Stylesheets here-->
-	<link rel="stylesheet" href="styles.css" />
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.css" />
-	<link rel="stylesheet" type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jquery.mobile.datebox.min.css" /> 
-	<!--Javascript normally at bottom except for Modernizr-->
+	<link rel="stylesheet" type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jquery.mobile.datebox.min.css" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
 	
+	<!--Javascript normally at bottom except for Modernizr-->
+	<script src ="js/libs/modernizr.custom.69169.js"></script>
 </head>
 <body>
 	
@@ -39,7 +40,7 @@
 		<div data-role="content">
 			
 			<center><img src="images/dungeon-2.png" width="300"/></center>
-			<a href="#addDungeonToList" data-role="button" data-theme="e">Add Dungeon</a>
+			<a href="#addDungeon" data-role="button" data-theme="e">Add a Dungeon</a>
 			
 			<div data-role="fieldcontain">
 			    <label for="search">Search categories:</label>
@@ -641,17 +642,17 @@
 				
 	</div>
 	
-	<div data-role="page" id="addDungeonToList" data-add-back-btn="true" data-theme="a">
+	<div data-role="page" id="addDungeon" data-add-back-btn="true" data-theme="a">
 		
 			<div data-role="header" id="header" data-position="fixed">
 				<h1>Add A Dungeon</h1>
 			</div>
 		
 		<div data-role="content">
-			<form>
+			<form action="" method="post" id="adddungeonform">
 				<div data-role="fieldcontain">
 				    <label for="dungeon_name">Dungeon Name:</label>
-				    <input type="text" name="dungeon_name" id="dungeon_name" value=""  />
+				    <input type="text" name="dungeon_name" id="dungeon_name" value="" class="required" />
 				</div>
 				
 				<div data-role="fieldcontain">
@@ -668,7 +669,7 @@
 				
 				<div data-role="fieldcontain">
 					<label for="location" class="select">Choose a dungeon location:</label>
-					<select name="location" id="location">
+					<select name="location" id="location" >
 						<option value="north">north</option>
 						<option value="northeast">northeast</option>
 						<option value="northwest">northwest</option>
@@ -690,9 +691,9 @@
 				<div data-role="fieldcontain">
 				 	<fieldset data-role="controlgroup">
 						<legend>Is the dungeon populated?</legend>
-						<input type="checkbox" name="populated_1" id="populated_1" class="custom" />
+						<input type="checkbox" name="populated_1" id="populated_1" class="required" />
 						<label for="populated_1">yes</label>
-						<input type="checkbox" name="populated_2" id="populated_2" class="custom" />
+						<input type="checkbox" name="populated_2" id="populated_2"  />
 						<label for="populated_2">no</label>
 				    </fieldset>
 				</div>
@@ -700,14 +701,17 @@
 				<div data-role="fieldcontain">
 				 	<fieldset data-role="controlgroup">
 						<legend>Are the inhabitants friendly?</legend>
-						<input type="checkbox" name="friendly_1" id="friendly_1" class="custom" />
+						<input type="checkbox" name="friendly_1" id="friendly_1" class="required" />
 						<label for="friendly_1">no</label>
-						<input type="checkbox" name="friendly_2" id="friendly_2" class="custom" />
+						<input type="checkbox" name="friendly_2" id="friendly_2" />
 						<label for="friendly_2">yes</label>
 				    </fieldset>
 				</div>
 				
-				<div data-role="fieldcontain"> <label for="occupant" class="select">Choose inhabitants:</label> <select name="occupant" id="occupant" multiple="true"> <option>Please choose</option>
+				<div data-role="fieldcontain"> 
+				<label for="occupant">Choose inhabitants:</label> 
+				<select name="occupant" id="occupant" multiple="true" class="required"> 
+				<option>Please choose</option>
 				<optgroup label="Animal"> 
 				<option value="option1" disabled="true">bears</option> 
 				<option value="option2">crabs</option> 
@@ -746,7 +750,7 @@
 							being "the BEST booty ever!", rate the loot found in this dungeon:
 							(Use 0 to indicate there was no loot to be found.)
 					</p>
-				 	<input type="range" name="loot_rating" id="loot_rating" value="0" min="0" max="10"  />
+				 	<input type="range" name="loot_rating" id="loot_rating" value="0" min="0" max="10" />
 				</div>
 				
 				<div data-role="fieldcontain">
@@ -754,19 +758,41 @@
 					<textarea cols="40" rows="8" name="notes" id="notes"></textarea>
 				</div>
 				
-				<a href="#" data-role="button" input-type="submit" id="submit">Add Dungeon</a>
+				<div data-role="fieldcontain">
+					<input type="reset" value="Reset" data-inline="true" data-theme="a" />
+					<input type="submit" value="Add Dungeon" data-theme="a" data-inline="true" />
+				</div>
+				
+				<a href="#addungeonerrors" id="aderrorslink" data-rel="dialog" data-transition="pop">Open Errors</a>
+				
+				
 				
 			</form>
-		</div>
-		
-		
-		
+			
+			<div data-role="dialog" id="addungeonerrors">
+				
+				<div data-role="header" data-position="fixed">
+					<h1>Missing Fields</h1>
+				</div>
+					
+					<div data-role="content">
+						<ul>
+							<li>Test.</li>
+						</ul>
+					</div>
+				
+				</div>
+		</div>	
 	</div>
+	
+	
 		
 
 	
 	<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.js"></script>
-	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jquery.mobile.datebox.min.js"></script>	
+	<script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jquery.mobile.datebox.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>	
 </body>
 </html>
