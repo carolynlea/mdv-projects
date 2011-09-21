@@ -17,3 +17,11 @@
 #notes {
 	height:65px;
 }
+
+h1 img{
+	margin:0px;
+	padding:0px;
+	width:100%;
+	background-color:("images/deepscratch.jpg");
+}
+
