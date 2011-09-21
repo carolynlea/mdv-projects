@@ -26,3 +26,8 @@ $(document).ready(function(){
 	});
 
 });
+
+
+$('#home').css('background', 'url(images/landscape.png)');
+
+$('#addDungeon').css('background', 'url(images/deepBumps.jpg)');

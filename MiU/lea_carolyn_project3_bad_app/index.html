@@ -31,27 +31,33 @@
 </head>
 <body>
 	
-	<div data-role="page" id="home" data-theme="a">
+	<div data-role="page" id="home" data-theme="">
 		
-		<div data-role="header" id="header" data-position="fixed">
+		<div data-role="header" id="preheader">
+			<img src="images/bannerstyle.png" width="100%"/>
+		</div>
+		
+		<div data-role="header" id="header" data-position="fixed" data-theme="e">
 			<h1>Dungeon Tracker</h1>
 		</div>
 		
 		<div data-role="content">
-			
-			<center><img src="images/dungeon-2.png" width="300"/></center>
-			<a href="#addDungeon" data-role="button" data-theme="e">Add a Dungeon</a>
+		
+			<center><img src="images/dungeon-2.png" width="300 px"/></center>
+			<a href="#addDungeon" data-role="button" id="addbutton" data-theme="e">Add a Dungeon</a>
 			
 			<div data-role="fieldcontain">
 			    <label for="search">Search categories:</label>
-			    <input type="search" name="password" id="search" value="" />
+			    <input type="search" name="password" id="search" value="" data-theme="a" />
 			</div>
 			
+			
 			<h3>Search saved items by category:</h3>
+		
 			
 			<div class="ui-grid-a">
 				<div class="ui-block-a">
-					<div class="ui-bar ui-bar-d" style="height:100px">
+					<div class="ui-bar ui-bar-b" style="height:100px">
 					<a href="#campsites">
 						<center><img src="images/campsite.png" style="height:60px"/></center>
 					</a>Campsites
@@ -65,14 +71,14 @@
 					</div>
 				</div>
 				<div class="ui-block-a">	
-					<div class="ui-bar ui-bar-d" style="height:100px">		
+					<div class="ui-bar ui-bar-e" style="height:100px">		
 					<a href="#forts">
 						<center><img src="images/fort.png" style="height:60px"/></center>
 					</a><br />Forts
 					</div>
 				</div><!-- /grid-b -->
 				<div class="ui-block-b">	
-					<div class="ui-bar ui-bar-d" style="height:100px">		
+					<div class="ui-bar ui-bar-b" style="height:100px">		
 					<a href="#mines">
 						<center><img src="images/mine.png" style="height:60px"/></center>
 					</a>Mines
@@ -86,7 +92,7 @@
 					</div>
 				</div><!-- /grid-b -->
 				<div class="ui-block-b">	
-					<div class="ui-bar ui-bar-d" style="height:100px">		
+					<div class="ui-bar ui-bar-e" style="height:100px">		
 					<a href="#ruins">
 						<center><img src="images/ruin.png" style="height:60px"/></center>
 					</a>Ruins
@@ -99,15 +105,19 @@
 		
 	<div data-role="page" id="campsites" data-add-back-btn="true" data-theme="a">
 		
-		<div data-role="header" id="header" data-position="fixed">
+		<div data-role="header" id="preheader">
+			<img src="images/bannerstyle.png" width="100%"/>
+		</div>
+		
+		<div data-role="header" id="header" data-position="fixed" data-theme="e">
 			<h1>Campsites</h1>
 		</div>
 		
 		<div data-role="content">
 			
-			<div data-role="collapsible-set" data-theme="a">
+			<div data-role="collapsible-set">
 				
-				<div data-role="collapsible" data-collapsed="true">
+				<div data-role="collapsible" data-collapsed="true" data-theme="b">
 					<h3>Black Dog Camp</h3>
 					<ul data-role="listview">
 						<li>Location: southwest area</li>
@@ -122,7 +132,7 @@
 					</ul>
 				</div>
 				
-				<div data-role="collapsible" data-collapsed="true">
+				<div data-role="collapsible" data-collapsed="true" data-theme="c">
 					<h3>Bawnwatch Camp</h3>
 					<ul data-role="listview">
 						<li>Location: east area</li>
@@ -137,7 +147,7 @@
 					</ul>
 				</div>
 				
-				<div data-role="collapsible" data-collapsed="true">
+				<div data-role="collapsible" data-collapsed="true" data-theme="b">
 					<h3>Wind Range Camp</h3>
 					<ul data-role="listview">
 						<li>Location: east area</li>
@@ -152,7 +162,7 @@
 					</ul>
 				</div>
 				
-				<div data-role="collapsible" data-collapsed="true">
+				<div data-role="collapsible" data-collapsed="true" data-theme="c">
 					<h3>Sercen Camp</h3>
 					<ul data-role="listview">
 						<li>Location: east area</li>
@@ -168,7 +178,7 @@
 				</div>
 				
 				
-				<div data-role="collapsible" data-collapsed="true">
+				<div data-role="collapsible" data-collapsed="true" data-theme="b">
 					<h3>Carbo's Camp</h3>
 					<ul data-role="listview">
 						<li>Location: south area</li>
@@ -190,7 +200,11 @@
 	
 	<div data-role="page" id="caves" data-add-back-btn="true" data-theme="a">
 		
-		<div data-role="header" id="header" data-position="fixed">
+		<div data-role="header" id="preheader">
+			<img src="images/bannerstyle.png" width="100%"/>
+		</div>
+		
+		<div data-role="header" id="header" data-position="fixed" data-theme="e">
 			<h1>Caves</h1>
 		</div>
 		
@@ -198,7 +212,7 @@
 			
 			<div data-role="collapsible-set">
 				
-			<div data-role="collapsible" data-collapsed="true">
+			<div data-role="collapsible" data-collapsed="true" data-theme="b">
 				<h3>Hrota Cave</h3>
 				<ul data-role="listview">
 					<li>Location: southwest area</li>
@@ -214,7 +228,7 @@
 			</div>
 			
 			
-			<div data-role="collapsible" data-collapsed="true">
+			<div data-role="collapsible" data-collapsed="true"data-theme="c">
 				<h3>Echo Cave</h3>
 				<ul data-role="listview">
 					<li>Location: west area</li>
@@ -230,7 +244,7 @@
 			</div>
 			
 			
-			<div data-role="collapsible" data-collapsed="true">
+			<div data-role="collapsible" data-collapsed="true" data-theme="b">
 				<h3>Brittle Rock Cave</h3>
 				<ul data-role="listview">
 					<li>Location: south area</li>
@@ -246,7 +260,7 @@
 			</div>
 			
 			
-			<div data-role="collapsible" data-collapsed="true">
+			<div data-role="collapsible" data-collapsed="true" data-theme="c">
 				<h3>Outlaw Endres' Cave</h3>
 				<ul data-role="listview">
 					<li>Location: north area</li>
@@ -262,7 +276,7 @@
 			</div>
 			
 			
-			<div data-role="collapsible" data-collapsed="true">
+			<div data-role="collapsible" data-collapsed="true" data-theme="b">
 				<h3>Broken Promises Cave</h3>
 				<ul data-role="listview">
 					<li>Location: east area</li>
@@ -284,7 +298,11 @@
 	
 	<div data-role="page" id="forts" data-add-back-btn="true" data-theme="a">
 		
-		<div data-role="header" id="header" data-position="fixed">
+		<div data-role="header" id="preheader">
+			<img src="images/bannerstyle.png" width="100%"/>
+		</div>
+		
+		<div data-role="header" id="header" data-position="fixed" data-theme="e">
 			<h1>Forts</h1>
 		</div>
 		
@@ -292,7 +310,7 @@
 			
 			<div data-role="collapsible-set">
 				
-			<div data-role="collapsible" data-collapsed="true">
+			<div data-role="collapsible" data-collapsed="true" data-theme="b">
 				<h3>Fort Roebeck</h3>
 				<ul data-role="listview">
 					<li>Location: northwest area</li>
@@ -307,7 +325,7 @@
 				</ul>
 			</div>
 			
-			<div data-role="collapsible" data-collapsed="true">
+			<div data-role="collapsible" data-collapsed="true" data-theme="c">
 				<h3>Fort Virtue</h3>
 				<ul data-role="listview">
 					<li>Location: north area</li>
@@ -322,7 +340,7 @@
 				</ul>
 			</div>
 			
-			<div data-role="collapsible" data-collapsed="true">
+			<div data-role="collapsible" data-collapsed="true" data-theme="b">
 				<h3>Fort Urasek</h3>
 				<ul data-role="listview">
 					<li>Location: south area</li>
@@ -337,7 +355,7 @@
 				</ul>
 			</div>
 			
-			<div data-role="collapsible" data-collapsed="true">
+			<div data-role="collapsible" data-collapsed="true" data-theme="c">
 				<h3>Fort Istirus</h3>
 				<ul data-role="listview">
 					<li>Location: north area</li>
@@ -352,7 +370,7 @@
 				</ul>
 			</div>
 			
-			<div data-role="collapsible" data-collapsed="true">
+			<div data-role="collapsible" data-collapsed="true" data-theme="b">
 				<h3>Fort Ontu</h3>
 				<ul data-role="listview">
 					<li>Location: northeast area</li>
@@ -374,7 +392,11 @@
 	
 	<div data-role="page" id="mines" data-add-back-btn="true" data-theme="a">
 		
-		<div data-role="header" id="header" data-position="fixed">
+		<div data-role="header" id="preheader">
+			<img src="images/bannerstyle.png" width="100%"/>
+		</div>
+		
+		<div data-role="header" id="header" data-position="fixed" data-theme="e">
 			<h1>Mines</h1>
 		</div>
 		
@@ -382,7 +404,7 @@
 			
 			<div data-role="collapsible-set">
 				
-			<div data-role="collapsible" data-collapsed="true">
+			<div data-role="collapsible" data-collapsed="true" data-theme="b">
 				<h3>Derelict Mine</h3>
 				<ul data-role="listview">
 					<li>Location: south area</li>
@@ -397,7 +419,7 @@
 				</ul>
 			</div>
 			
-			<div data-role="collapsible" data-collapsed="true">
+			<div data-role="collapsible" data-collapsed="true" data-theme="c">
 				<h3>Crumbling Mine</h3>
 				<ul data-role="listview">
 					<li>Location: northwest area</li>
@@ -412,7 +434,7 @@
 				</ul>
 			</div>
 			
-			<div data-role="collapsible" data-collapsed="true">
+			<div data-role="collapsible" data-collapsed="true" data-theme="b">
 				<h3>Plundered Mine</h3>
 				<ul data-role="listview">
 					<li>Location: west area</li>
@@ -427,7 +449,7 @@
 				</ul>
 			</div>
 			
-			<div data-role="collapsible" data-collapsed="true">
+			<div data-role="collapsible" data-collapsed="true" data-theme="c">
 				<h3>Empty Mine</h3>
 				<ul data-role="listview">
 					<li>Location: south area</li>
@@ -442,7 +464,7 @@
 				</ul>
 			</div>
 			
-			<div data-role="collapsible" data-collapsed="true">
+			<div data-role="collapsible" data-collapsed="true" data-theme="b">
 				<h3>Rickety Mine</h3>
 				<ul data-role="listview">
 					<li>Location: southwest area</li>
@@ -464,7 +486,11 @@
 	
 	<div data-role="page" id="portals" data-add-back-btn="true" data-theme="a">
 		
-		<div data-role="header" id="header" data-position="fixed">
+		<div data-role="header" id="preheader">
+			<img src="images/bannerstyle.png" width="100%"/>
+		</div>
+		
+		<div data-role="header" id="header" data-position="fixed" data-theme="e">
 			<h1>Portals</h1>
 		</div>
 		
@@ -472,7 +498,7 @@
 			
 			<div data-role="collapsible-set">
 				
-			<div data-role="collapsible" data-collapsed="true">
+			<div data-role="collapsible" data-collapsed="true" data-theme="b">
 				<h3>Bruma Gate</h3>
 				<ul data-role="listview">
 					<li>Location: north area</li>
@@ -487,7 +513,7 @@
 				</ul>
 			</div>
 			
-			<div data-role="collapsible" data-collapsed="true">
+			<div data-role="collapsible" data-collapsed="true" data-theme="c">
 				<h3>Chorrol Gate</h3>
 				<ul data-role="listview">
 					<li>Location: east area</li>
@@ -502,7 +528,7 @@
 				</ul>
 			</div>
 			
-			<div data-role="collapsible" data-collapsed="true">
+			<div data-role="collapsible" data-collapsed="true" data-theme="b">
 				<h3>Skingrad Gate</h3>
 				<ul data-role="listview">
 					<li>Location: southeast area</li>
@@ -517,7 +543,7 @@
 				</ul>
 			</div>
 			
-			<div data-role="collapsible" data-collapsed="true">
+			<div data-role="collapsible" data-collapsed="true" data-theme="c">
 				<h3>Anvil Gate</h3>
 				<ul data-role="listview">
 					<li>Location: southwest area</li>
@@ -532,7 +558,7 @@
 				</ul>
 			</div>
 			
-			<div data-role="collapsible" data-collapsed="true">
+			<div data-role="collapsible" data-collapsed="true" data-theme="b">
 				<h3>Bravil Gate</h3>
 				<ul data-role="listview">
 					<li>Location: west area</li>
@@ -554,7 +580,11 @@
 	
 	<div data-role="page" id="ruins" data-add-back-btn="true" data-theme="a">
 		
-		<div data-role="header" id="header" data-position="fixed">
+		<div data-role="header" id="preheader">
+			<img src="images/bannerstyle.png" width="100%"/>
+		</div>
+		
+		<div data-role="header" id="header" data-position="fixed" data-theme="e">
 			<h1>Ruins</h1>
 		</div>
 		
@@ -562,7 +592,7 @@
 			
 			<div data-role="collapsible-set">
 				
-			<div data-role="collapsible" data-collapsed="true">
+			<div data-role="collapsible" data-collapsed="true" data-theme="b">
 				<h3>Vahtacen</h3>
 				<ul data-role="listview">
 					<li>Location: south area</li>
@@ -577,7 +607,7 @@
 				</ul>
 			</div>
 			
-			<div data-role="collapsible" data-collapsed="true">
+			<div data-role="collapsible" data-collapsed="true" data-theme="c">
 				<h3>Atatar</h3>
 				<ul data-role="listview">
 					<li>Location: south area</li>
@@ -592,7 +622,7 @@
 				</ul>
 			</div>
 			
-			<div data-role="collapsible" data-collapsed="true">
+			<div data-role="collapsible" data-collapsed="true" data-theme="b">
 				<h3>Nenalata</h3>
 				<ul data-role="listview">
 					<li>Location: west area</li>
@@ -607,7 +637,7 @@
 				</ul>
 			</div>
 			
-			<div data-role="collapsible" data-collapsed="true">
+			<div data-role="collapsible" data-collapsed="true" data-theme="c">
 				<h3>Morahame</h3>
 				<ul data-role="listview">
 					<li>Location: southwest area</li>
@@ -622,7 +652,7 @@
 				</ul>
 			</div>
 			
-			<div data-role="collapsible" data-collapsed="true">
+			<div data-role="collapsible" data-collapsed="true" data-theme="b">
 				<h3>Wendelbek</h3>
 				<ul data-role="listview">
 					<li>Location: east area</li>
@@ -642,9 +672,14 @@
 				
 	</div>
 	
-	<div data-role="page" id="addDungeon" data-add-back-btn="true" data-theme="a">
-		
-			<div data-role="header" id="header" data-position="fixed">
+	<div data-role="page" id="addDungeon" data-add-back-btn="true" data-theme="">
+			
+			
+			<div data-role="header" id="preheader">
+				<img src="images/bannerstyle.png" width="100%"/>
+			</div>
+			
+			<div data-role="header" id="header" data-position="fixed" data-theme="e">
 				<h1>Add A Dungeon</h1>
 			</div>
 		
@@ -652,12 +687,12 @@
 			<form action="" method="post" id="adddungeonform">
 				<div data-role="fieldcontain">
 				    <label for="dungeon_name">Dungeon Name:</label>
-				    <input type="text" name="dungeon_name" id="dungeon_name" value="" class="required" />
+				    <input type="text" name="dungeon_name" id="dungeon_name" value="" class="required" data-theme="c"/>
 				</div>
 				
 				<div data-role="fieldcontain">
 					<label for="dungeon_type" class="select">Choose a dungeon type:</label>
-					<select name="dungeon_type" id="dungeon_type">
+					<select name="dungeon_type" id="dungeon_type" data-theme="b">
 						<option value="campsite">Campsite</option>
 						<option value="cave">Cave</option>
 						<option value="fort">Fort</option>
@@ -669,7 +704,7 @@
 				
 				<div data-role="fieldcontain">
 					<label for="location" class="select">Choose a dungeon location:</label>
-					<select name="location" id="location" >
+					<select name="location" id="location" data-theme="b">
 						<option value="north">north</option>
 						<option value="northeast">northeast</option>
 						<option value="northwest">northwest</option>
@@ -691,9 +726,9 @@
 				<div data-role="fieldcontain">
 				 	<fieldset data-role="controlgroup">
 						<legend>Is the dungeon populated?</legend>
-						<input type="checkbox" name="populated_1" id="populated_1" class="required" />
+						<input type="checkbox" name="populated_1" id="populated_1" class="required" data-theme="b"/>
 						<label for="populated_1">yes</label>
-						<input type="checkbox" name="populated_2" id="populated_2"  />
+						<input type="checkbox" name="populated_2" id="populated_2"  data-theme="b"/>
 						<label for="populated_2">no</label>
 				    </fieldset>
 				</div>
@@ -701,16 +736,16 @@
 				<div data-role="fieldcontain">
 				 	<fieldset data-role="controlgroup">
 						<legend>Are the inhabitants friendly?</legend>
-						<input type="checkbox" name="friendly_1" id="friendly_1" class="required" />
+						<input type="checkbox" name="friendly_1" id="friendly_1" class="required" data-theme="b"/>
 						<label for="friendly_1">no</label>
-						<input type="checkbox" name="friendly_2" id="friendly_2" />
+						<input type="checkbox" name="friendly_2" id="friendly_2" data-theme="b"/>
 						<label for="friendly_2">yes</label>
 				    </fieldset>
 				</div>
 				
 				<div data-role="fieldcontain"> 
 				<label for="occupant">Choose inhabitants:</label> 
-				<select name="occupant" id="occupant" multiple="true" class="required"> 
+				<select name="occupant" id="occupant" multiple="true" class="required" data-theme="b"> 
 				<option>Please choose</option>
 				<optgroup label="Animal"> 
 				<option value="option1" disabled="true">bears</option> 
@@ -755,12 +790,12 @@
 				
 				<div data-role="fieldcontain">
 					<label for="notes">Textarea:</label>
-					<textarea cols="40" rows="8" name="notes" id="notes"></textarea>
+					<textarea cols="40" rows="8" name="notes" id="notes" data-theme="c"></textarea>
 				</div>
 				
 				<div data-role="fieldcontain">
-					<input type="reset" value="Reset" data-inline="true" data-theme="a" />
-					<input type="submit" value="Add Dungeon" data-theme="a" data-inline="true" />
+					<input type="reset" value="Reset" data-inline="true" data-theme="b" />
+					<input type="submit" value="Add Dungeon" data-theme="e" data-inline="true" />
 				</div>
 				
 				<a href="#addungeonerrors" id="aderrorslink" data-rel="dialog" data-transition="pop">Open Errors</a>
