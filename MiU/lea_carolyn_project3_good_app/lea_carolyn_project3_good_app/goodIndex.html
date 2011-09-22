@@ -31,17 +31,30 @@
 
 <body>
 	
+	<div data-role="page" id="launch" data-theme="">
+		<div data-role="header" id="header" data-position="fixed">
+			<h1>Dungeon Tracker</h1>
+		</div>
+		
+		<center><img src="images/whitelogo.png"/></center>
+		
+		<div>
+			<a href="#home" data-role="button" data-theme="e">Click to Enter</a><br />
+		</div>
+	</div>
+	
 	<div data-role="page" id="home" data-theme="">
 		
 		<div data-role="header" id="header" data-position="fixed">
 			<h1>Dungeon Tracker</h1>
-			<h1><img src="images/bannerstyle.png"/></h1>
 		</div>
+		
+		<img src="images/dragonlogo.png" id="dragon" />
 		
 		<div data-role="content">
 			
 			<center><img src="images/dungeon-2.png" width="300"/></center><!--feature image-->
-			<a href="addDungeon.html" data-role="button" data-theme="e">Add A Dungeon</a><br /><!--button goes to addItem part of application-->
+			<a href="#addDungeon" data-role="button" data-theme="e">Add A Dungeon</a><br /><!--button goes to addItem part of application-->
 		
 			
 				<ul data-role="listview" data-theme="a" data-divider-theme="a">
@@ -1173,6 +1186,138 @@
 						<li>Notes: Lots of stones, ayleid statue, soul gems.</li>
 					</ul>
 				</div>	
+			</div>
+			
+			
+			
+			<div data-role="page" id="addDungeon" data-add-back-btn="true" data-theme="a" >
+
+					<div data-role="header" id="header" data-position="fixed">
+						
+						<h1>Add A Dungeon</h1>
+						
+					</div>
+
+				<div data-role="content">
+					<form>
+						<div data-role="fieldcontain">
+						    <label for="dungeon_name">Enter a dungeon name:</label>
+						    <input type="text" name="dungeon_name" id="dungeon_name" value=""  placeholder="i.e. Fort Smiley, Happy Cave, etc." required />
+						</div>
+
+						<div data-role="fieldcontain">
+							<label for="dungeon_type" class="select">Choose the dungeon type:</label>
+							<select name="dungeon_type" id="dungeon_type">
+								<option>Please select one.</option>
+								<option value="campsite">Campsite</option>
+								<option value="cave">Cave</option>
+								<option value="fort">Fort</option>
+								<option value="mine">Mine</option>
+								<option value="portal">Portal</option>
+								<option value="ruin">Ruin</option>
+							</select>
+						</div>
+
+						<div data-role="fieldcontain">
+							<label for="location" class="select">Choose the dungeon location:</label>
+							<select name="location" id="location">
+								<option>Please select one.</option>
+								<option value="north">north</option>
+								<option value="northeast">northeast</option>
+								<option value="northwest">northwest</option>
+								<option value="east">east</option>
+								<option value="west">west</option>
+								<option value="south">south</option>
+								<option value="south">southeast</option>
+								<option value="south">southwest</option>
+							</select>
+						</div>
+
+						<div data-role="fieldcontain">
+							<label for="mydate">Date the dungeon was found:</label>
+
+							<input name="mydate" id="mydate" type="date" data-role="datebox"
+							   data-options='{"mode": "calbox": "calTodayButton": true}' data-theme="a"/>
+
+						</div>
+
+						<div data-role="fieldcontain">
+						 	<fieldset data-role="controlgroup">
+								<legend>Is this dungeon populated?</legend>
+								<input type="radio" value="yes" name="populated" id="populated_1" class="custom" checked="checked" />
+								<label for="populated_1">yes</label>
+								<input type="radio" value="no" name="populated" id="populated_2" class="custom" />
+								<label for="populated_2">no</label>
+						    </fieldset>
+						</div>
+
+						<div data-role="fieldcontain">
+						 	<fieldset data-role="controlgroup">
+								<legend>Are the inhabitants friendly?</legend>
+								<input type="radio" value="no" name="friendly" id="friendly_1" class="custom" checked="checked" />
+								<label for="friendly_1">no</label>
+								<input type="radio" value="yes" name="friendly" id="friendly_2" class="custom" />
+								<label for="friendly_2">yes</label>
+						    </fieldset>
+						</div>
+
+						<div data-role="fieldcontain"> 
+						<label for="occupant" class="select">Choose which inhabitants are there:</label> 
+						<select name="occupant" id="occupant" multiple="true"> 
+						<option>Choose one or more.</option>
+						<optgroup label="Animal"> 
+						<option value="option1" disabled="true">bears</option> 
+						<option value="option2">crabs</option> 
+						<option value="option3">fish</option>
+						<option value="option3">lions</option>
+						<option value="option3">rats</option>
+						<option value="option3">wolves</option>
+						</optgroup>
+						<optgroup label="Human">
+						<option value="option1">bandits</option>
+						<option value="option2">conjurers</option>
+						<option value="option3">marauders</option>
+						<option value="option3">necromancers</option>
+						<option value="option3">quest giver</option>
+						<option value="option3">trainer</option>
+						</optgroup>
+						<optgroup label="Mythic">
+						<option value="option1">goblins</option>
+						<option value="option2">imps</option>
+						<option value="option3">minotaurs</option>
+						<option value="option3">ogres</option>
+						<option value="option3">unicorn</option>
+						</optgroup>
+						<optgroup label="Undead">
+						<option value="option1">skeletons</option>
+						<option value="option2">vampires</option>
+						<option value="option3">wraiths</option>
+						<option value="option3">zombies</option>
+						</optgroup>
+						</select>
+						</div>
+
+						<div data-role="fieldcontain">
+							<label for="loot_rating">Rate the loot:</label>
+							<p>On a scale of 1 being "NOT worth it!" to 10 
+									being "the BEST booty ever!", rate the loot found in this dungeon:
+									(Use 0 to indicate there was no loot to be found.)
+							</p>
+						 	<input type="range" name="loot_rating" id="loot_rating" value="5" min="0" max="10" />
+						</div>
+
+						<div data-role="fieldcontain">
+							<label for="notes">Notes:</label>
+							<textarea cols="40" rows="8" name="notes" id="notes" placeholder="Include landmarks, special loot, items left behind, or anything else you might want to remember."></textarea>
+						</div>
+
+						<a href="#" data-role="button" input-type="submit" id="submit" data-theme="e">Add Dungeon</a>
+
+					</form>
+				</div>
+
+
+
 			</div>
 			
 			

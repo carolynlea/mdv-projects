@@ -14,14 +14,34 @@
 	font-size:30px;
 }
 
+#launch h1{
+	border: 1px solid #37382C;
+	margin:0px;
+	padding:10px;
+	background:#000000;
+	color:#FEFEF0;
+	font-family:georgia;
+	font-size:30px;
+}
+
 #notes {
 	height:65px;
 }
 
-h1 img{
-	margin:0px;
-	padding:0px;
+#launch img{
 	width:100%;
-	background-color:("images/deepscratch.jpg");
+	margin-top:60px;
+	margin-bottom:60px;
 }
+
+#dragon{
+	position:absolute;
+	left:170px;
+	top:280px;
+	z-index:1;	
+}
+
+
+
+
 
