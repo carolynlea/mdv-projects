@@ -12,9 +12,11 @@
 	color:#FEFEF0;
 	font-family:georgia;
 	font-size:30px;
+	width:100%;
+
 }
 
-#launch h1{
+#addDungeon h1{
 	border: 1px solid #37382C;
 	margin:0px;
 	padding:10px;
@@ -22,24 +24,40 @@
 	color:#FEFEF0;
 	font-family:georgia;
 	font-size:30px;
+	width:100%;
+}
+/*
+#home h1 {
+	width:100%;
+}*/
+
+#launch h1 {
+	border: 1px solid #37382C;
+	margin:0px;
+	padding:10px;
+	background:#000000;
+	color:#FEFEF0;
+	font-family:georgia;
+	font-size:30px;
+	width:100%;
 }
 
 #notes {
 	height:65px;
 }
 
-#launch img{
+#branding{
 	width:100%;
-	margin-top:60px;
-	margin-bottom:60px;
+	margin-top:50px;
+	margin-bottom:40px;
 }
 
-#dragon{
+/*#dragon{
 	position:absolute;
 	left:170px;
 	top:280px;
 	z-index:1;	
-}
+}*/
 
 
 
