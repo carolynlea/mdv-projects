@@ -1,0 +1,65 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    $.ajax({
+        type: "GET",
+        url: "dungeon.txt",
+        dataType: "text",
+        success: function(data) {processData(data);}
+     });
+});
+
+function processData(allText) {
+    var allTextLines = allText.split(/\r\n|\n/);
+    var name = allTextLines[0].split(',');
+	var type = allTextLines[1].split(',');
+	var location = allTextLines[2].split(',');
+	var date = allTextLines[3].split(',');
+	var populated = allTextLines[4].split(',');
+	var friendly = allTextLines[5].split(',');
+	var occupant = allTextLines[6].split(',');
+	var category = allTextLines[7].split(',');
+	var lootrating = allTextLines[8].split(',');
+	var noloothere = allTextLines[9].split(',');
+	var notes = allTextLines[10].split(',');
+    var lines = [];
+
+    for (var i=1; i<allTextLines.length; i++) {
+        var data = allTextLines[i].split(',');
+        if (data.length == name.length) {
+
+            var list = [];
+            for (var j=0; j<name.length; j++) {
+                list.push(name[j]+": "+data[j]+"<br/>");
+				
+				
+            }
+            lines.push(list);
+        }
+    }
+    $(lines).appendTo("#csvdungeons");
+}
+
+
+</script>
+</head>
+
+<body>
+	<div data-role="page" data-add-back-btn="true">
+
+		<div data-role="header">
+			<h1>CSV DATA</h1>
+		</div>
+
+		<div data-role="content">
+			<ul id="csvdungeons" data-role="listview"></ul>
+			
+		</div>
+
+	</div>
+
+</body>
+
+</html>

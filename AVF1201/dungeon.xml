@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<dungeon>
+	<found>
+		<type>Cave</type>
+		<name>Hrota Cave</name>
+		<location>southwest area</location>
+		<date>August 11, 2011</date>
+		<populated>yes</populated>
+		<friendly>no</friendly>
+		<occupant>human</occupant>
+		<category>bandits</category>
+		<lootrating>5</lootrating>
+		<noloothere>no</noloothere>
+		<notes>Lots of traps.  Be careful!</notes>
+	</found>
+	<found>
+		<type>Cave</type>
+		<name>Echo Cave</name>
+		<location>west area</location>
+		<date>August 14, 2011</date>
+		<populated>yes</populated>
+		<friendly>no</friendly>
+		<occupant>human</occupant>
+		<category>necromancers</category>
+		<lootrating>9</lootrating>
+		<noloothere>no</noloothere>
+		<notes>Many boss chests with scrolls and potion.  Mannimarco is here.</notes>
+	</found>
+	<found>
+		<type>Cave</type>
+		<name>Brittle Rock Cave</name>
+		<location>south area</location>
+		<date>August 12, 2011</date>
+		<populated>yes</populated>
+		<friendly>no</friendly>
+		<occupant>animal</occupant>
+		<category>fish</category>
+		<lootrating>1</lootrating>
+		<noloothere>no</noloothere>
+		<notes>One soul gem.</notes>
+	</found>
+	<found>
+		<type>Cave</type>
+		<name>Outlaw Endres' Cave</name>
+		<location>north area</location>
+		<date>August 15, 2011</date>
+		<populated>yes</populated>
+		<friendly>no</friendly>
+		<occupant>human</occupant>
+		<category>bandits</category>
+		<lootrating>5</lootrating>
+		<noloothere>no</noloothere>
+		<notes>There is a hidden trap door on the bottom level.</notes>
+	</found>
+	<found>
+		<type>Cave</type>
+		<name>Broken Promises Cave</name>
+		<location>east area</location>
+		<date>August 13, 2011</date>
+		<populated>yes</populated>
+		<friendly>no</friendly>
+		<occupant>mythic</occupant>
+		<category>goblins</category>
+		<lootrating>6</lootrating>
+		<noloothere>no</noloothere>
+		<notes>Watch for swinging traps.  Boss chest</notes>
+	</found>
+	<found>
+		<type>Fort</type>
+		<name>Fort Roebeck</name>
+		<location>northwest area</location>
+		<date>August 16, 2011</date>
+		<populated>yes</populated>
+		<friendly>no</friendly>
+		<occupant>human</occupant>
+		<category>conjurers</category>
+		<lootrating>3</lootrating>
+		<noloothere>no</noloothere>
+		<notes>Some scrolls and potions.  Left some silver armor.  Be sure to go back and get it.</notes>
+	</found>
+	<found>
+		<type>Fort</type>
+		<name>Fort Virtue</name>
+		<location>north area</location>
+		<date>August 17, 2011</date>
+		<populated>yes</populated>
+		<friendly>no</friendly>
+		<occupant>undead</occupant>
+		<category>zombies</category>
+		<lootrating>7</lootrating>
+		<noloothere>no</noloothere>
+		<notes>Fair amount of loot but lots of dart traps.</notes>
+	</found>
+	<found>
+		<type>Fort</type>
+		<name>Fort Urasek</name>
+		<location>south area</location>
+		<date>August 18, 2011</date>
+		<populated>yes</populated>
+		<friendly>no</friendly>
+		<occupant>mythic</occupant>
+		<category>goblins</category>
+		<lootrating>5</lootrating>
+		<noloothere>no</noloothere>
+		<notes>You'll find marauders fighting the goblins.  Lots of traps.</notes>
+	</found>
+	<found>
+		<type>Fort</type>
+		<name>Fort Istirus</name>
+		<location>north area</location>
+		<date>August 19, 2011</date>
+		<populated>yes</populated>
+		<friendly>no</friendly>
+		<occupant>human</occupant>
+		<category>necromancers</category>
+		<lootrating>8</lootrating>
+		<noloothere>no</noloothere>
+		<notes>Complicated 3 levels.  Many dart traps.  Good loot.</notes>
+	</found>
+	<found>
+		<type>Fort</type>
+		<name>Fort Ontu</name>
+		<location>northeast area</location>
+		<date>August 20, 2011</date>
+		<populated>yes</populated>
+		<friendly>yes</friendly>
+		<occupant>human</occupant>
+		<category>quest giver</category>
+		<lootrating>0</lootrating>
+		<noloothere>yes</noloothere>
+		<notes>Mages hangout.</notes>
+	</found>
+</dungeon>

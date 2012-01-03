@@ -1,0 +1,53 @@
+/*	CAROLYN LEA
+	PROJECT 1
+	ASD 1111
+	OCTOBER 27, 2011
+*/
+
+#home h1 {
+	border: 1px solid #37382C;
+	margin:0px;
+	padding:10px;
+	background:#000000;
+	color:#FEFEF0;
+	font-family:georgia;
+	font-size:30px;
+	width:100%;
+
+}
+
+#addDungeon h1{
+	border: 1px solid #37382C;
+	margin:0px;
+	padding:10px;
+	background:#000000;
+	color:#FEFEF0;
+	font-family:georgia;
+	font-size:30px;
+	width:100%;
+}
+
+
+#launch h1 {
+	border: 1px solid #37382C;
+	margin:0px;
+	padding:10px;
+	background:#000000;
+	color:#FEFEF0;
+	font-family:georgia;
+	font-size:30px;
+	width:100%;
+}
+
+#notes {
+	height:65px;
+}
+
+#branding{
+	width:100%;
+	margin-top:50px;
+	margin-bottom:40px;
+}
+
+
+
