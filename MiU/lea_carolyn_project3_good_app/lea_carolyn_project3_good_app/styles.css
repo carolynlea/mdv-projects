@@ -1,0 +1,65 @@
+/*CAROLYN LEA
+	PROJECT 3
+	MIU 1109
+	SEPTEMBER 12, 2011
+*/
+
+#home h1 {
+	border: 1px solid #37382C;
+	margin:0px;
+	padding:10px;
+	background:#000000;
+	color:#FEFEF0;
+	font-family:georgia;
+	font-size:30px;
+	width:100%;
+
+}
+
+#addDungeon h1{
+	border: 1px solid #37382C;
+	margin:0px;
+	padding:10px;
+	background:#000000;
+	color:#FEFEF0;
+	font-family:georgia;
+	font-size:30px;
+	width:100%;
+}
+/*
+#home h1 {
+	width:100%;
+}*/
+
+#launch h1 {
+	border: 1px solid #37382C;
+	margin:0px;
+	padding:10px;
+	background:#000000;
+	color:#FEFEF0;
+	font-family:georgia;
+	font-size:30px;
+	width:100%;
+}
+
+#notes {
+	height:65px;
+}
+
+#branding{
+	width:100%;
+	margin-top:50px;
+	margin-bottom:40px;
+}
+
+/*#dragon{
+	position:absolute;
+	left:170px;
+	top:280px;
+	z-index:1;	
+}*/
+
+
+
+
+

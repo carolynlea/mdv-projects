@@ -1,0 +1,14 @@
+label.error{
+	display:block;
+	margin:10px 0;
+	color:#cc0000;
+}
+
+#aderrorslink{
+	display:none;
+}
+
+h3{
+	background:white;
+}
+
