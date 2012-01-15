@@ -1,209 +1,505 @@
 <!doctype html>  
 <html lang="en">
-<head>
-
-	<meta charset="utf-8">
-	
-	<title>AVF Demo</title>
-	
-	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
-	<meta name="HandheldFriendly" content="True" />
-	<meta name="MobileOptimized" content="320" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	
-	<!-- Mobile IE needs ClearType for smoothing fonts -->
-	<meta http-equiv="cleartype" content="on">
-	
-	<!-- StyleSheets under here -->
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
-	<link rel="stylesheet" href="css/style.css" />
-	
-	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
-	<script src="js/libs/modernizr.custom.min.js"></script>
-	
-</head>
-<body>
-	<section id="page1" data-role="page">
-		<header data-role="header">
-			<h1>As Done By Carolyn</h1>
-			<nav data-role="navbar">
-				<ul>
-				<a href="#page1" class="ui-btn-active">Home</a>
-				<a href="#page2">Apps</a>
-				<a href="#page3">iOS & Android</a>
-				<a href="#page4">iOS or Android</a>
-				<a href="#page5">Research</a>
-				<a href="#page6">About</a>
-				</ul>
-			</nav>
-		</header>
-		<div class="content" data-role="content">
-			<h3>Welcome to my portfolio!</h3>
-			<p>This is a round-up of all my class assignments for AVF1201.  You will be able to view my
+    <head>
+        
+        <meta charset="utf-8">
+            
+            <title>AVF Demo</title>
+            
+            <!--  Mobile viewport optimized: j.mp/bplateviewport -->
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            
+            <!-- Mobile IE needs ClearType for smoothing fonts -->
+            <meta http-equiv="cleartype" content="on" />
+            
+            <!-- StyleSheets under here -->
+            <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+            <link href="http://fonts.googleapis.com/css?family=Lobster+Two:700" rel="stylesheet" type="text/css">
+            <link rel="stylesheet" href="css/pGapAndroid.css" />
+            
+            <!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+            <script src="js/libs/modernizr.custom.min.js"></script>
+            
+            <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+            <script type="text/javascript" charset="utf-8">
+            var watchID = null;
+            // Wait for PhoneGap to load
+            document.addEventListener('deviceready', onDeviceReady, false);
+            // PhoneGap is ready, start watching
+            function onDeviceReady() {
+            startWatch();
+            }
+            // Start watching the acceleration
+            function startWatch() {
+            // Update acceleration every 3 seconds
+            var options = { frequency: 3000 };
+            watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError,
+            options);
+            }
+            // Stop watching the acceleration
+            function stopWatch() {
+            if (watchID) {
+            navigator.accelerometer.clearWatch(watchID);
+            watchID = null;
+            }
+            }
+            // onSuccess: Get a snapshot of the current acceleration
+            function onSuccess(acceleration) {
+            var element = document.getElementById('accelerometer');
+            element.innerHTML = 'Acceleration X: ' + acceleration.x + '<br />' + 'Acceleration Y: ' + acceleration.y + '<br />' + 'Acceleration Z: ' + acceleration.z + '<br />' + 'Timestamp: ' + acceleration.timestamp + '<br />';
+            }
+            // onError: Failed to get the acceleration
+            //
+            function onError() {
+            alert('oooops!');
+            }
+            </script>
+            
+            <script type="text/javascript">              
+                function run() {
+                    var win = function(position) {         // Grab coordinates object from the Position object passed into success callback.
+                        var coords = position.coords;
+                        // Call for static google maps data 
+                        var url = "http://maps.google.com/maps/api/staticmap?center=" + coords.latitude + "," + coords.longitude + "&zoom=13&size=320x480&maptype=roadmap&key=AIzaSyDx0-46NjFfk1cpKYGZX_jD2S8AQlcF6Gc&sensor=true";
+                        document.getElementById('map').setAttribute('src',url);
+                    };
+                    var fail = function(e) {
+                        alert('Can\'t retrieve position.\nError: ' + e);
+                    };
+                    navigator.geolocation.getCurrentPosition(win, fail);
+                } 
+                </script>
+                
+                 <script type="text/javascript"> 
+                
+                // Beep twice
+                //
+                function playBeep() {
+                    navigator.notification.beep(2);
+                }
+            </script>
+            
+            
+            
+    </head>
+    <body>
+        <section id="page1" data-role="page">
+            <header data-role="header">
+                <h1>As Done by Carolyn</h1>
+                <nav data-role="navbar">
+                    <ul>
+                        <a href="#page1" data-transition="pop" data-theme="e">Home</a>
+                        <a href="#page2" data-transition="pop" data-theme="e">Demos</a>
+                        <a href="#page4" data-transition="pop" data-theme="e">Research</a>
+                        <a href="#page5" data-transition="pop" data-theme="e">About</a>
+                    </ul>
+                </nav>
+                
+            </header>
+			<div class="content" data-role="content" data-theme="e">
+                <background><img src="images/cmpsilho.gif" /></background>
+                
+			</div>
+            
+            <footer data-role="footer" data-position="fixed"><center><p>Carolyn Lea AVF1201</p></center></footer>
+        </section>
+        
+        <section id="page2" data-role="page">
+            <header data-role="header">
+                <h1>As Done By Carolyn</h1>
+                <nav data-role="navbar">
+                    <ul>
+                        <a href="#page1" data-transition="pop" data-theme="e">Home</a>
+                        <a href="#page2" data-transition="pop" data-theme="e">Demos</a>
+                        <a href="#page4" data-transition="pop" data-theme="e">Research</a>
+                        <a href="#page5" data-transition="pop" data-theme="e">About</a>
+                    </ul>
+                </nav>
+            </header>
+            <div class="content" data-role="content" data-theme="c">
+                <h2>Apps and Features Demos</h2>
+                <ul data-role="listview">
+                    <li data-role="list-divider">CRUD APPLICATIONS</li>
+                    <li data-theme="c"><a href="https://carolynlea.cloudant.com/dungeonproject/_design/dungeonproject/index.html">Dungeon Tracker</a></li>
+                    <li data-theme="c"><a href="#page2" data-transition="pop">New or Updated App</a></li>
+                    <li data-role="list-divider">NATIVE FEATURES</li>
+                    <li data-theme="c"><a href="#page3" data-transition="slide">Operate on BOTH iOS AND Android</a></li>
+                    <li data-theme="c"><a href="#page6" data-transition="slide">Operate on EITHER iOS OR Android</a></li>
+                    <li data-role="list-divider">VIDEOS AND LINKS</li>
+                    <li data-theme="c"><a href="#videos" data-transition="slide">Reflection and Demo Videos</a></li>
+                </ul>
+            </div>
+            
+            <footer data-role="footer" data-position="fixed"><center><p>Carolyn Lea AVF1201</p></center></footer>
+        </section>
+        
+        <section id="page3" data-role="page">
+            <header data-role="header">
+                <h1>As Done By Carolyn</h1>
+                <nav data-role="navbar">
+                    <ul>
+                        <a href="#page1" data-transition="pop" data-theme="e">Home</a>
+                        <a href="#page2" data-transition="pop" data-theme="e">Demos</a>
+                        <a href="#page4" data-transition="pop" data-theme="e">Research</a>
+                        <a href="#page5" data-transition="pop" data-theme="e">About</a>
+                    </ul>
+                </nav>
+            </header>
+            <div class="content" data-role="content">
+                <a href="#page2" data-direction="reverse">Back to Demos</a>
+                <h1>Native Features for Both</h1>
+                <ul data-role="listview" data-theme="c">
+                    <li data-role="list-divider"></li>
+                    <li><a href="#feature1" data-transition="pop" data-rel="dialog">Accelerometer</a></li>
+                    <li><a href="#feature2" data-transition="pop">Geolocation</a></li>
+                    <li><a href="#feature3" data-transition="pop" data-rel="dialog">Notifications</a></li>
+                </ul>
+            </div>
+            
+            <footer data-role="footer" data-position="fixed"><center><p>Carolyn Lea AVF1201</p></center></footer>
+        </section>
+        
+        <section id="page4" data-role="page">
+            <header data-role="header">
+                <h1>As Done By Carolyn</h1>
+                <nav data-role="navbar">
+                    <ul>
+                        <a href="#page1" data-transition="pop" data-theme="e">Home</a>
+                        <a href="#page2" data-transition="pop" data-theme="e">Demos</a>
+                        <a href="#page4" data-transition="pop" data-theme="e">Research</a>
+                        <a href="#page5" data-transition="pop" data-theme="e">About</a>
+                    </ul>
+                </nav>
+            </header>
+            <div class="content" data-role="content" data-theme="c">
+                <h1>Research Articles</h1>
+                <ul data-role="listview">
+                    <li data-role="list-divider"></li>
+                    <li><a href="#week1" data-transition="slide">Week 1 Discussion: Industry Reasearch and Project Intent</a></li>
+                    <li><a href="#week2" data-transition="slide">Week 2 Discussion: Accessibility</a></li>
+                    <li><a href="#week3" data-transition="slide">Week 3 Discussion Article</a></li>
+                </ul>
+            </div>
+            
+            <footer data-role="footer" data-position="fixed"><center><p>Carolyn Lea AVF1201</p></center></footer>
+        </section>
+        
+        <section id="page5" data-role="page">
+            <header data-role="header">
+                <h1>As Done By Carolyn</h1>
+                <nav data-role="navbar">
+                    <ul>
+                        <a href="#page1" data-transition="pop" data-theme="e">Home</a>
+                        <a href="#page2" data-transition="pop" data-theme="e">Demos</a>
+                        <a href="#page4" data-transition="pop" data-theme="e">Research</a>
+                        <a href="#page5" data-transition="pop" data-theme="e">About</a>
+                    </ul>
+                </nav>
+            </header>
+            <div class="content" data-role="content">
+                <h1>About</h1>
+                <img src="images/me2.jpg" />
+                <p>Carolyn Lea</p>
+                <p>AVF1201</p>
+                <h3>Welcome to my collection!</h3>
+                <p>This is a round-up of all my class assignments for AVF1201.  You will be able to view my
 				current CRUD apps, see demonstrations of iOS and Android native features that I am able
-				to implement, and, have access to my most recent research in the field of mobile
+				to implement, and have access to my most recent research in the field of mobile
 				technology.  Thanks for visiting!</p>
-		</div>
+                
+            </div>
+            
+            <footer data-role="footer" data-position="fixed"><center><p>Carolyn Lea AVF1201</p></center></footer>
+        </section>
+        
+        <section id="page6" data-role="page">
+            <header data-role="header">
+                <h1>As Done By Carolyn</h1>
+                <nav data-role="navbar">
+                    <ul>
+                        <a href="#page1" data-transition="pop" data-theme="e">Home</a>
+                        <a href="#page2" data-transition="pop" data-theme="e">Demos</a>
+                        <a href="#page4" data-transition="pop" data-theme="e">Research</a>
+                        <a href="#page5" data-transition="pop" data-theme="e">About</a>
+                    </ul>
+                </nav>
+            </header>
+            <div class="content" data-role="content">
+                <a href="#page2" data-direction="reverse">Back to Demos</a>
+                <h1>Native Features for Either</h1>
+                <ul data-role="listview" data-theme="c">
+                    <li data-role="list-divider"></li>
+                    <li><a href="#feature4" data-transition="pop" data-rel="dialog">feature a</a></li>
+                    <li><a href="#feature5" data-transition="pop" data-rel="dialog">feature b</a></li>
+                </ul>
+            </div>
+            
+            <footer data-role="footer" data-position="fixed"><center><p>Carolyn Lea AVF1201</p></center></footer>
+        </section>
+        
+        <section id="week1" data-role="page">
+            <header data-role="header">
+                <h1>As Done By Carolyn</h1>
+                <nav data-role="navbar">
+                    <ul>
+                        <a href="#page1" data-transition="pop" data-theme="e">Home</a>
+                        <a href="#page2" data-transition="pop" data-theme="e">Demos</a>
+                        <a href="#page4" data-transition="pop" data-theme="e">Research</a>
+                        <a href="#page5" data-transition="pop" data-theme="e">About</a>
+                    </ul>
+                </nav>
+            </header>
+            <div class="content" data-role="content">
+                <article>
+                    <h3>Week 1 Discussion: Industry Reasearch and Project Intent</h3>
+                <h4>What types of native features (on Android and iOS devices) would you be able to implement with the use of HTML/CSS/JS only? (just a hint - iOS can be the tricky one)</h4>
+                    <p>Javascript often uses a “bridge” such as PhoneGap to access things like the accelerometer, camera, compass, contacts, geolocation, media, notifications and storage.  HTML5 contains audio and video elements. CSS can be used to make media queries and play with transitions.
+                    </p>
+                <h4>For your CRUD app revision, which of these do you think you will implement?</h4>
+                    <p>I’d love to get local storage completely working in my CRUD App.  It is only partially working at this time.  I think it would be very cool to utilize the geolocation in such a way that users would be able to identify other users nearby and compare notes with them.  Of course, they can compare notes with users who are far away as well and it would be interesting to see where people are playing the game worldwide.
+                    </p>
+                <h4>Briefly describe some past 'lessons learned' regarding workflow as it relates to research, design, development, etc.</h4>
+                    <p>I found that it is very important to keep everything organized in appropriate folders.  If I’m going to make large changes in my code, I create a back-up copy of the original in case I spin off on a tangent that doesn’t go anywhere.  As far as research, everything is still hit and miss with me.  Sometimes I can find tons of information and other times I’m at a loss as to what to look for.  Design is sometimes even more difficult than implementation.  I often find that I have a hard time choosing colors that I’m happy with and deciding on the flow of the UI is sometimes challenging as well.  It takes test after test to find what it is that gives the best user experience.
+                    </p>
+                <h4>Please describe any design intentions you may have for the AVF Demo app and the revised/new version of your CRUD app.</h4>
+                    <p>I would like my Demo App to be similar in color scheme to my CRUD app.  I may not like it when I actually implement it, but that will be my first design choice.  I think that I will also eventually veer away from using jQuery mobile as I find it to be generic looking.  I am hoping to create something that is cleaner,  and leaner but just as functional as jQuery mobile.  So it is very likely that the whole look and feel of the app will evolve into something that I feel personally more pleasing.  Perhaps bits of jQuery will remain.  It will depend on what I can come up with.
+                    </p>
+                    <h4>If not covered above, please also describe any functionality intentions you may have for both the AVF Demo app and the revised/new version of your CRUD app
+                    </h4>
+                        <p>I know that I need to find a way to navigate from my CRUD app on cloudant back to my design app on iOS devices that don’t have an available back button.
+                    </p>
+				<a href="#page4" data-direction="reverse">Back to Research</a>
+                </article>
+            </div>
+            
+            
+            <footer data-role="footer"><center><p>Carolyn Lea AVF1201</p></center></footer>
+        </section>
+        
+        <section id="week2" data-role="page">
+            <header data-role="header">
+                <h1>As Done By Carolyn</h1>
+                <nav data-role="navbar">
+                    <ul>
+                        <a href="#page1" data-transition="pop" data-theme="e">Home</a>
+                        <a href="#page2" data-transition="pop" data-theme="e">Demos</a>
+                        <a href="#page4" data-transition="pop" data-theme="e">Research</a>
+                        <a href="#page5" data-transition="pop" data-theme="e">About</a>
+                    </ul>
+                </nav>
+            </header>
+            <div class="content" data-role="content">
+                <article>
+                    <h3>Week 2 Discussion: Accessibility</h3>
+                    <h4>What are some of the ways that you could change your HTML on your Demo app to be more accessible? (Remember, you can use the Section tag with jQuery, for instance)</h4>
+                        <p>Using semantic markup is probably the most efficient way to make my app more accessible.  I already use div, section, img, and basics like that.  I could add other tags to render video such as video, source, track and call upon javascript to help users navigate the contents.
+                        </p>
+                    <h4>Visit a video service on the web (like YouTube) and search for "Screen Reader Demo" - what are some of the common frustrations that you see among the examples that are given - how could you fix them?</h4>
+                        <p>There are many sites that just aren’t optimized to be utilized by screenreaders.  Users get frustrated by not being able to navigate through the page and the service becomes totally useless for the impaired consumer.  Being aware of this demographic and the best practices in optimization is the best way to fix these problems.   With this being my first exposure to accessibility (for it has never entered my train of thought that blind people would use the internet – a bit of naiveté, or perhaps insensitivity on my part), I would definitely feel compelled to look into what I can do to create functionality for everyone who would use my applications.
+                    </p>
+                    <h4>Devices: Please list two devices (and some of their features) that are made specifically to support Accessibility.</h4>
+                        <p>The iPad has received rave reviews for accessibility right out of the box with only a small learning curve.  The iPad’s features include voice over, gestures, text navigation.  The iPhone and iPod touch also features the same sort of accessibility but the iPad’s larger structure adds more functionality for the user.
+                        </p>
+                        <p>Although not a device, Android 2.0 and higher offer accessibility features such as Text To Speech (in English, French, Italian, Spanish, and German), improved keyboard, Project Eyes-Free that has accessibility tools like TalkBack, APIs to create things like screenreaders, and haptic feedback which uses the sense of touch and employing forces, vibrations, and/or motions upon the user.  All stuff to keep in mind while designing apps for Android. 
+                        </p>
+                    <h4>Mobile Apps: Please list two apps (either Android or iOS, or both) that are made specifically to support Accessibility.</h4>
+                        <p>Two social apps for Android that were tested using TalkBack (one of the official Google accessibility services) are Facebook by Facebook and Foursquare by foursquare.
+                        </p>
+                    <a href="#page4" data-direction="reverse">Back to Research</a>
+                </article>
+            </div>
+            
+            
+            <footer data-role="footer"><center><p>Carolyn Lea AVF1201</p></center></footer>
+        </section>
+        
+        <section id="week3" data-role="page">
+            <header data-role="header">
+                <h1>As Done By Carolyn</h1>
+                <nav data-role="navbar">
+                    <ul>
+                        <a href="#page1" data-transition="pop" data-theme="e">Home</a>
+                        <a href="#page2" data-transition="pop" data-theme="e">Demos</a>
+                        <a href="#page4" data-transition="pop" data-theme="e">Research</a>
+                        <a href="#page5" data-transition="pop" data-theme="e">About</a>
+                    </ul>
+                </nav>
+            </header>
+            <div class="content" data-role="content">
+                <h3>Week 3 Discussion</h3>
+				<article>
+                    <h3>Week 3 Discussion</h3>
+                    <p>This is where the week 1 discussion article will go.</p>
+                    <p>This is where the week 1 discussion article will go.</p>
+                    <p>This is where the week 1 discussion article will go.</p>
+                    <p>This is where the week 1 discussion article will go.</p>
+                    <a href="#page4" data-direction="reverse">Back to Research</a>
+                </article>
+            </div>
+            
+            
+            <footer data-role="footer"><center><p>Carolyn Lea AVF1201</p></center></footer>
+        </section>
+        
+        <section id="feature1" data-role="page">
+            <header data-role="header">
+                <h6>As Done By Carolyn</h6>
+            </header>
+            <div class="content" data-role="content" data-direction="reverse">
+                <h3>Accelerometer</h3>
+				<div id="accelerometer">Waiting for accelerometer...</div>
+				<button onclick="stopWatch();">Stop Watching</button><br />
+				<button onclick="startWatch();">Start Watching Again</button>
+            </div>
+        </section>
+        
+        <section id="feature2" data-role="page" data-direction="reverse">
+            <header data-role="header">
+                <h1>As Done By Carolyn</h1>
+                <nav data-role="navbar">
+                    <ul>
+                        <a href="#page1" data-transition="pop" data-theme="e">Home</a>
+                        <a href="#page2" data-transition="pop" data-theme="e">Demos</a>
+                        <a href="#page4" data-transition="pop" data-theme="e">Research</a>
+                        <a href="#page5" data-transition="pop" data-theme="e">About</a>
+                    </ul>
+                </nav>
+            </header>
+            <div class="content" data-role="content">
+            <a href="#page3">Back</a>
+                <h3>Geolocation</h3>
+				<script>run();</script>
+        		<img id="map" />
+            </div>
+            <footer data-role="footer" data-position="fixed"><center><p>Carolyn Lea AVF1201</p></center></footer>
+        </section>
+        
+        <section id="feature3" data-role="page" data-direction="reverse">
+            <header data-role="header">
+                <h6>As Done By Carolyn</h6>
+            </header>
+            <div class="content" data-role="content">
+                <h3>Notifications</h3>
+				<p><a href="#" onclick="playBeep(); return false;">Poke the Droid.</a></p>
+            </div>
+        </section>
+        
+        <section id="feature4" data-role="page" data-direction="reverse">
+            <header data-role="header">
+                <h1>As Done By Carolyn</h1>
+            </header>
+            <div class="content" data-role="content">
+                <h3>Feature a</h3>
+				
+            </div>
+        </section>
+        
+        <section id="feature5" data-role="page" data-direction="reverse">
+            <header data-role="header">
+                <h1>As Done By Carolyn</h1>
+            </header>
+            <div class="content" data-role="content">
+                <h3>Feature b</h3>
+				
+            </div>
+        </section>
+        
+        <section id="videos" data-role="page">
+            <header data-role="header">
+                <h1>As Done By Carolyn</h1>
+                <nav data-role="navbar">
+                    <ul>
+                        <a href="#page1" data-transition="pop" data-theme="e">Home</a>
+                        <a href="#page2" data-transition="pop" data-theme="e">Demos</a>
+                        <a href="#page4" data-transition="pop" data-theme="e">Research</a>
+                        <a href="#page5" data-transition="pop" data-theme="e">About</a>
+                    </ul>
+                </nav>
+            </header>
+            <div class="content" data-role="content">
+                <a href="#page2" data-direction="reverse">Back to Demos</a>
+                <h1>Reflection and Demo Videos</h1>
+                <ul data-role="listview" data-theme="c">
+                    <li data-role="list-divider"></li>
+                    <li><a href="#video1" data-transition="pop">Week Two Reflection and Demo</a></li>
+                    <li><a href="#video2" data-transition="pop">Week Three Reflection and Demo</a></li>
+                    <li><a href="#video3" data-transition="pop">Week Four Reflection and Demo</a></li>
+                </ul>
+            </div>
+            
+            
+            <footer data-role="footer"><center><p>Carolyn Lea AVF1201</p></center></footer>
+        </section>
+        
+        <section id="video1" data-role="page" data-direction="reverse">
+            <header data-role="header">
+                <h1>As Done By Carolyn</h1>
+                <nav data-role="navbar">
+                    <ul>
+                        <a href="#page1" data-transition="pop" data-theme="e">Home</a>
+                        <a href="#page2" data-transition="pop" data-theme="e">Demos</a>
+                        <a href="#page4" data-transition="pop" data-theme="e">Research</a>
+                        <a href="#page5" data-transition="pop" data-theme="e">About</a>
+                    </ul>
+                </nav>
+            </header>
+            <div class="content" data-role="content">
+                <h3>Week Two Reflection and Demo</h3>
+                <video onclick="this.play();" controls width="320" height="240">
+                    <source src="videos/sr5.mp4" />
+                    <source src="videos/sr5ipad.mp4" type='video/mp4;' />
+                    <source src="videos/sr5.webm" type='video/webm;' />
+                    <source src="videos/sr5.ogv" type='video/ogg;' />
+                </video>
+				
+            </div>
+            <footer data-role="footer" data-position="fixed"><center><p>Carolyn Lea AVF1201</p></center></footer>
+        </section>
+        
+        <section id="video2" data-role="page" data-direction="reverse">
+            <header data-role="header">
+                <h1>As Done By Carolyn</h1>
+                <nav data-role="navbar">
+                    <ul>
+                        <a href="#page1" data-transition="pop" data-theme="e">Home</a>
+                        <a href="#page2" data-transition="pop" data-theme="e">Demos</a>
+                        <a href="#page4" data-transition="pop" data-theme="e">Research</a>
+                        <a href="#page5" data-transition="pop" data-theme="e">About</a>
+                    </ul>
+                </nav>
+            </header>
+            <div class="content" data-role="content">
+                <h3>Week Three Reflection and Demo</h3>
+				
+            </div>
+            <footer data-role="footer" data-position="fixed"><center><p>Carolyn Lea AVF1201</p></center></footer>
+        </section>
+        
+        <section id="video3" data-role="page" data-direction="reverse">
+            <header data-role="header">
+                <h1>As Done By Carolyn</h1>
+                <nav data-role="navbar">
+                    <ul>
+                        <a href="#page1" data-transition="pop" data-theme="e">Home</a>
+                        <a href="#page2" data-transition="pop" data-theme="e">Demos</a>
+                        <a href="#page4" data-transition="pop" data-theme="e">Research</a>
+                        <a href="#page5" data-transition="pop" data-theme="e">About</a>
+                    </ul>
+                </nav>
+            </header>
+            <div class="content" data-role="content">
+                <h3>Week Four Reflection and Demo</h3>
+				
+            </div>
+            <footer data-role="footer" data-position="fixed"><center><p>Carolyn Lea AVF1201</p></center></footer>
+        </section>
+        
+        
+        
 		
-		<footer data-role="footer" data-position="fixed"><h4>carolynlea.com</h4></footer>
-	</section>
-	
-	<section id="page2" data-role="page">
-		<header data-role="header">
-			<h1>As Done By Carolyn</h1>
-			<nav data-role="navbar">
-				<ul>
-				<a href="#page1">Home</a>
-				<a href="#page2" class="ui-btn-active">Apps</a>
-				<a href="#page3">iOS & Android</a>
-				<a href="#page4">iOS or Android</a>
-				<a href="#page5">Research</a>
-				<a href="#page6">About</a>
-				</ul>
-			</nav>
-		</header>
-		<div class="content" data-role="content">
-			<h3>Crud Applications</h3>
-			<p>(After visiting my app, just click the back button in your browser or on your device to come back here.  Thanks!)</p>
-			<a href="https://carolynlea.cloudant.com/dungeonproject/_design/dungeonproject/index.html" data-role="button" data-theme="e">Go To Dungeon Tracker</a>
-		</div>
-		
-		<footer data-role="footer" data-position="fixed"><h1>carolynlea.com</h1></footer>
-	</section>
-	
-	<section id="page3" data-role="page">
-		<header data-role="header">
-			<h1>As Done By Carolyn</h1>
-			<nav data-role="navbar">
-				<ul>
-				<a href="#page1">Home</a>
-				<a href="#page2">Apps</a>
-				<a href="#page3" class="ui-btn-active">iOS & Android</a>
-				<a href="#page4">iOS or Android</a>
-				<a href="#page5">Research</a>
-				<a href="#page6">About</a>
-				</ul>
-			</nav>
-		</header>
-		<div class="content" data-role="content">
-			<h3>Demos of features that work in both iOS and Android:</h3>
-		</div>
-		
-		<footer data-role="footer" data-position="fixed"><h1>carolynlea.com</h1></footer>
-	</section>
-	
-	<section id="page4" data-role="page">
-		<header data-role="header">
-			<h1>As Done By Carolyn</h1>
-			<nav data-role="navbar">
-				<ul>
-				<a href="#page1">Home</a>
-				<a href="#page2">Apps</a>
-				<a href="#page3">iOS & Android</a>
-				<a href="#page4" class="ui-btn-active">iOS or Android</a>
-				<a href="#page5">Research</a>
-				<a href="#page6">About</a>
-				</ul>
-			</nav>
-		</header>
-		<div class="content" data-role="content">
-			<h3>Demos of features that work in either iOS or Android:</h3>
-		</div>
-		
-		<footer data-role="footer" data-position="fixed"><h1>carolynlea.com</h1></footer>
-	</section>
-	
-	<section id="page5" data-role="page">
-		<header data-role="header">
-			<h1>As Done By Carolyn</h1>
-			<nav data-role="navbar">
-				<ul>
-				<a href="#page1">Home</a>
-				<a href="#page2">Apps</a>
-				<a href="#page3">iOS & Android</a>
-				<a href="#page4">iOS or Android</a>
-				<a href="#page5" class="ui-btn-active">Research</a>
-				<a href="#page6">About</a>
-				</ul>
-			</nav>
-		</header>
-		<div class="content" data-role="content">
-			<h3>Research Articles:</h3>
-			<a href="#week1">Week 1: Discussion Article for Week 1</a><br />
-			<a href="#week2">Week 2: Discussion Article for Week 2</a><br />
-			<a href="#week3">Week 3: Discussion Article for Week 3</a>
-		</div>
-		
-		<footer data-role="footer" data-position="fixed"><h1>carolynlea.com</h1></footer>
-	</section>
-	
-	<section id="page6" data-role="page">
-		<header data-role="header">
-			<h1>As Done By Carolyn</h1>
-			<nav data-role="navbar">
-				<ul>
-				<a href="#page1">Home</a>
-				<a href="#page2">Apps</a>
-				<a href="#page3">iOS & Android</a>
-				<a href="#page4">iOS or Android</a>
-				<a href="#page5">Research</a>
-				<a href="#page6" class="ui-btn-active">About</a>
-				</ul>
-			</nav>
-		</header>
-		<div class="content" data-role="content">
-			<h3>About:</h3>
-			<img src="images/me2.jpg" />
-			<p>Carolyn Lea</p>
-			<p>AVF1201</p>
-		</div>
-		
-	</section>
-		
-	<section id="week1" data-role="page">
-		<header data-role="header">
-			<h1>As Done By Carolyn</h1>
-		</header>
-		<div class="content" data-role="content">
-			<h3>Week 1 Discussion</h3>
-				<p>This is where the week 1 discussion article will go.</p>
-				<a href="#page5">Return to Research Articles.</a>
-		</div>
-	
-		
-		<footer data-role="footer" data-position="fixed"><h1>carolynlea.com</h1></footer>
-	</section>
-	
-	<section id="week2" data-role="page">
-		<header data-role="header">
-			<h1>As Done By Carolyn</h1>
-		</header>
-		<div class="content" data-role="content">
-			<h3>Week 2 Discussion</h3>
-				<p>This is where the week 2 discussion article will go.</p>
-				<a href="#page5">Return to Research Articles.</a>
-		</div>
-
-		
-		<footer data-role="footer" data-position="fixed"><h1>carolynlea.com</h1></footer>
-	</section>
-	
-	<section id="week3" data-role="page">
-		<header data-role="header">
-			<h1>As Done By Carolyn</h1>
-		</header>
-		<div class="content" data-role="content">
-			<h3>Week 3 Discussion</h3>
-				<p>This is where the week 3 discussion article will go.</p>
-				<a href="#page5">Return to Research Articles.</a>
-		</div>
-	
-		
-		<footer data-role="footer" data-position="fixed"><h1>carolynlea.com</h1></footer>
-	</section>
-	
-	
-	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
-</body>
+        
+        
+        <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+    </body>
 </html>

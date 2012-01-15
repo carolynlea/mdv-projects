@@ -1,7 +1,65 @@
-img {
+.ui-header .ui-title, .ui-footer .ui-title {
+	overflow:visible;	
+}
+
+.ui-header .ui-title {
+	font-family: 'Georgia';
+	font-size:32px;
+	margin: 0.6em  0.6em;
+	color:#FFFFFF;
+}
+
+/*	
+ 'Sofia', cursive;
+ 'Bilbo Swash Caps', cursive;
+ 'Trade Winds', cursive;
+ 'Lobster Two', cursive;
+ */
+
+header {
+	height:120px;	
+}
+
+#page5 img {
 	height:120px;
 }
 
-.ui-header .ui-title, .ui-footer .ui-title {
-	overflow:visible;
+#page1 img {
+	width:100%;
 }
+
+.ui-bar-a, .ui-bar-a input, .ui-bar-a select, .ui-bar-a textarea, .ui-bar-a button {
+    font-family: Helvetica,Arial,sans-serif;
+    
+    
+}
+
+.ui-bar-a {
+    background: -webkit-linear-gradient(#37382C, #333823) repeat scroll 0 0 #111111;
+    border: 1px solid #2A2A2A;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-shadow: 0 -1px 2px #000000;
+}
+
+.ui-btn-up-a {
+    background: -webkit-linear-gradient(#6F7158, #8B8D6F, #6F7158) repeat scroll 0 0 #333333;
+    
+}
+
+.ui-btn-up-b {
+    background: -webkit-linear-gradient(#323232, #37382C) repeat scroll 0 0 #2567AB;
+}
+
+.ui-bar-b {
+    background: -webkit-linear-gradient(#323232, #37382C) repeat scroll 0 0 #5E87B0;
+}
+
+ .ui-btn-up-c {
+ background: -webkitz-linear-gradient(#A2A48B, #6F7158) repeat scroll 0 0 #EEEEEE;
+ }
+ 
+
+
+
+
